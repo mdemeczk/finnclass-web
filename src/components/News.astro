@@ -1,0 +1,29 @@
+---
+const news = [
+  { date: '2026. március 12.', icon: 'fa-flag-checkered', title: 'Elindult a 2026-os Finn szezon', text: 'Megjelent az idei hazai versenynaptár. Találkozzunk a tavakon és a rajtvonalon!' },
+  { date: '2026. február 28.', icon: 'fa-people-group', title: 'Éves osztálygyűlés', text: 'Az osztályszövetség tagjai elfogadták az éves programot és megválasztották a tisztségviselőket.' },
+  { date: '2026. február 10.', icon: 'fa-trophy', title: 'Díjaztuk a legeredményesebbeket', text: 'Közösen ünnepeltük az elmúlt szezon kiemelkedő teljesítményeit.' },
+];
+---
+
+<section class="section-space" id="hirek">
+  <div class="container">
+    <div class="section-heading d-flex justify-content-between align-items-end gap-3 mb-5">
+      <div><p class="eyebrow text-primary mb-2">Friss a kikötőből</p><h2>Legújabb hírek</h2></div>
+      <a class="text-link d-none d-sm-inline-flex" href="#hirek">Összes hír <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <div class="row g-4">
+      {news.map((item, index) => (
+        <article class="col-md-4">
+          <div class:list={['news-card h-100', { featured: index === 0 }]}>
+            <div class="news-icon"><i class={`fa-solid ${item.icon}`}></i></div>
+            <time>{item.date}</time>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+            <a href="#hirek" aria-label={`Tovább: ${item.title}`}>Tovább <i class="fa-solid fa-chevron-right"></i></a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

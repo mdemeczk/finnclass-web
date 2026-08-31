@@ -1,0 +1,21 @@
+---
+const moments = [
+  ['fa-water', 'Hátszélben'],
+  ['fa-wind', 'Friss szélben'],
+  ['fa-sailboat', 'A rajtvonalon'],
+  ['fa-medal', 'Dobogós pillanatok'],
+];
+---
+
+<section class="section-space" id="galeria">
+  <div class="container">
+    <div class="section-heading text-center mb-5"><p class="eyebrow text-primary mb-2">Pillanatok a vízről</p><h2>Finn életképek</h2></div>
+    <div class="gallery-grid">
+      {moments.map(([icon, label], index) => (
+        <div class:list={['gallery-item', `gallery-${index + 1}`]}>
+          <i class={`fa-solid ${icon}`}></i><span>{label}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

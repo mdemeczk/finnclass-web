@@ -1,15 +1,24 @@
 ---
+import MainLayout from '../layouts/MainLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import News from '../components/News.astro';
+import UpcomingRace from '../components/UpcomingRace.astro';
+import Results from '../components/Results.astro';
+import Gallery from '../components/Gallery.astro';
+import Sponsors from '../components/Sponsors.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<!doctype html>
-<html lang="hu">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>FinnClass.hu</title>
-  </head>
-  <body>
-    <h1>FinnClass.hu</h1>
-    <p>Magyar Finn Osztályszövetség</p>
-  </body>
-</html>
+<MainLayout>
+  <Navbar />
+  <main>
+    <Hero />
+    <News />
+    <UpcomingRace />
+    <Results />
+    <Gallery />
+    <Sponsors />
+  </main>
+  <Footer />
+</MainLayout>

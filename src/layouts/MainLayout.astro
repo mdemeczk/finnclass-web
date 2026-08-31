@@ -1,0 +1,33 @@
+---
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'FinnClass.hu | Magyar Finn Osztályszövetség',
+  description = 'A Magyar Finn Osztályszövetség hivatalos oldala: hírek, versenynaptár, eredmények és közösségi információk.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#073b5c" />
+    <link rel="icon" href={`${import.meta.env.BASE_URL}favicon.svg`} type="image/svg+xml" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+    <script>
+      import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+    </script>
+  </body>
+</html>

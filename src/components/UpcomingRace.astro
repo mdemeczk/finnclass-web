@@ -1,0 +1,38 @@
+---
+const races = [
+  ['ÁPR', '18–19', 'Tavaszi Finn Kupa', 'Balatonfüred'],
+  ['MÁJ', '09–10', 'Évadnyitó Nagydíj', 'Alsóörs'],
+  ['JÚN', '05–07', 'Magyar Bajnokság', 'Balatonföldvár'],
+  ['JÚL', '25–26', 'Flottabajnokság', 'Agárd'],
+];
+---
+
+<section class="section-space race-section text-white" id="versenynaptar">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-5">
+        <p class="eyebrow mb-2">Rajtra készen</p>
+        <h2 class="display-5 fw-bold mb-4">Következő verseny</h2>
+        <div class="next-race p-4 p-md-5">
+          <span class="badge text-bg-warning mb-3">KIEMELT ESEMÉNY</span>
+          <h3>Tavaszi Finn Kupa</h3>
+          <p class="race-meta"><i class="fa-regular fa-calendar"></i> 2026. április 18–19.</p>
+          <p class="race-meta"><i class="fa-solid fa-location-dot"></i> Balatonfüred</p>
+          <a class="btn btn-light mt-3" href="#kapcsolat">Versenykiírás <i class="fa-solid fa-file-arrow-down ms-2"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <div class="calendar-panel">
+          <div class="d-flex justify-content-between align-items-center mb-4"><h3 class="mb-0">2026-os versenynaptár</h3><i class="fa-regular fa-calendar-days fs-3"></i></div>
+          {races.map(([month, day, name, place]) => (
+            <div class="calendar-row">
+              <div class="date-box"><small>{month}</small><strong>{day}</strong></div>
+              <div><h4>{name}</h4><p><i class="fa-solid fa-location-dot me-2"></i>{place}</p></div>
+              <i class="fa-solid fa-chevron-right ms-auto"></i>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
