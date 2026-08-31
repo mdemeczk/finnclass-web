@@ -1,0 +1,17 @@
+{
+  "name": "finnclass-web",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.0.0",
+    "astro": "^5.13.5",
+    "bootstrap": "^5.3.8"
+  }
+}
