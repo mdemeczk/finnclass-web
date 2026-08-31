@@ -1,9 +1,9 @@
 ---
-const news = [
-  { date: '2026. március 12.', icon: 'fa-flag-checkered', title: 'Elindult a 2026-os Finn szezon', text: 'Megjelent az idei hazai versenynaptár. Találkozzunk a tavakon és a rajtvonalon!' },
-  { date: '2026. február 28.', icon: 'fa-people-group', title: 'Éves osztálygyűlés', text: 'Az osztályszövetség tagjai elfogadták az éves programot és megválasztották a tisztségviselőket.' },
-  { date: '2026. február 10.', icon: 'fa-trophy', title: 'Díjaztuk a legeredményesebbeket', text: 'Közösen ünnepeltük az elmúlt szezon kiemelkedő teljesítményeit.' },
-];
+import type { CollectionEntry } from 'astro:content';
+
+interface Props { news: CollectionEntry<'news'>[]; }
+const { news } = Astro.props;
+const dateFormatter = new Intl.DateTimeFormat('hu-HU', { year: 'numeric', month: 'long', day: 'numeric' });
 ---
 
 <section class="section-space" id="hirek">
@@ -16,11 +16,11 @@ const news = [
       {news.map((item, index) => (
         <article class="col-md-4">
           <div class:list={['news-card h-100', { featured: index === 0 }]}>
-            <div class="news-icon"><i class={`fa-solid ${item.icon}`}></i></div>
-            <time>{item.date}</time>
-            <h3>{item.title}</h3>
-            <p>{item.text}</p>
-            <a href="#hirek" aria-label={`Tovább: ${item.title}`}>Tovább <i class="fa-solid fa-chevron-right"></i></a>
+            <div class="news-icon"><i class={`fa-solid ${item.data.icon}`}></i></div>
+            <time datetime={item.data.date.toISOString()}>{dateFormatter.format(item.data.date)}</time>
+            <h3>{item.data.title}</h3>
+            <p>{item.data.excerpt}</p>
+            <a href="#hirek" aria-label={`Tovább: ${item.data.title}`}>Tovább <i class="fa-solid fa-chevron-right"></i></a>
           </div>
         </article>
       ))}

@@ -1,9 +1,9 @@
 ---
-const results = [
-  ['1', 'Kovács Péter', 'HUN 77', '7 pont'],
-  ['2', 'Nagy Gábor', 'HUN 5', '11 pont'],
-  ['3', 'Szabó András', 'HUN 23', '16 pont'],
-];
+import type { CollectionEntry } from 'astro:content';
+
+interface Props { results: CollectionEntry<'results'>[]; }
+const { results } = Astro.props;
+const season = results[0]?.data.season ?? new Date().getFullYear();
 ---
 
 <section class="section-space bg-light" id="eredmenyek">
@@ -11,17 +11,17 @@ const results = [
     <div class="row g-5 align-items-center">
       <div class="col-lg-5">
         <p class="eyebrow text-primary mb-2">Legutóbbi eredmények</p>
-        <h2 class="mb-3">Finn Ranglista 2025</h2>
+        <h2 class="mb-3">Finn Ranglista {season}</h2>
         <p class="text-secondary mb-4">Az éves ranglista a hazai versenyeken elért eredmények alapján.</p>
         <a class="btn btn-primary" href="#eredmenyek">Teljes eredménylista <i class="fa-solid fa-arrow-right ms-2"></i></a>
       </div>
       <div class="col-lg-7">
         <div class="results-card">
-          {results.map(([place, name, sail, points]) => (
+          {results.map((result) => (
             <div class="result-row">
-              <span class="place">{place}</span>
-              <span class="result-name"><strong>{name}</strong><small>{sail}</small></span>
-              <strong class="ms-auto">{points}</strong>
+              <span class="place">{result.data.ranking}</span>
+              <span class="result-name"><strong>{result.data.name}</strong><small>{result.data.sailNumber}</small></span>
+              <strong class="ms-auto">{result.data.points} pont</strong>
             </div>
           ))}
         </div>

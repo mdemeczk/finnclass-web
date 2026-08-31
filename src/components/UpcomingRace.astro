@@ -1,10 +1,14 @@
 ---
-const races = [
-  ['ÁPR', '18–19', 'Tavaszi Finn Kupa', 'Balatonfüred'],
-  ['MÁJ', '09–10', 'Évadnyitó Nagydíj', 'Alsóörs'],
-  ['JÚN', '05–07', 'Magyar Bajnokság', 'Balatonföldvár'],
-  ['JÚL', '25–26', 'Flottabajnokság', 'Agárd'],
-];
+import type { CollectionEntry } from 'astro:content';
+
+interface Props { races: CollectionEntry<'races'>[]; }
+const { races } = Astro.props;
+const featuredRace = races.find((race) => race.data.featured) ?? races[0];
+const monthFormatter = new Intl.DateTimeFormat('hu-HU', { month: 'short' });
+const fullDateFormatter = new Intl.DateTimeFormat('hu-HU', { year: 'numeric', month: 'long', day: 'numeric' });
+const dayRange = (race: CollectionEntry<'races'>) => race.data.endDate
+  ? `${String(race.data.startDate.getDate()).padStart(2, '0')}–${String(race.data.endDate.getDate()).padStart(2, '0')}`
+  : String(race.data.startDate.getDate()).padStart(2, '0');
 ---
 
 <section class="section-space race-section text-white" id="versenynaptar">
@@ -15,19 +19,19 @@ const races = [
         <h2 class="display-5 fw-bold mb-4">Következő verseny</h2>
         <div class="next-race p-4 p-md-5">
           <span class="badge text-bg-warning mb-3">KIEMELT ESEMÉNY</span>
-          <h3>Tavaszi Finn Kupa</h3>
-          <p class="race-meta"><i class="fa-regular fa-calendar"></i> 2026. április 18–19.</p>
-          <p class="race-meta"><i class="fa-solid fa-location-dot"></i> Balatonfüred</p>
+          <h3>{featuredRace.data.name}</h3>
+          <p class="race-meta"><i class="fa-regular fa-calendar"></i> {fullDateFormatter.format(featuredRace.data.startDate)}{featuredRace.data.endDate && ` – ${fullDateFormatter.format(featuredRace.data.endDate)}`}</p>
+          <p class="race-meta"><i class="fa-solid fa-location-dot"></i> {featuredRace.data.location}</p>
           <a class="btn btn-light mt-3" href="#kapcsolat">Versenykiírás <i class="fa-solid fa-file-arrow-down ms-2"></i></a>
         </div>
       </div>
       <div class="col-lg-7">
         <div class="calendar-panel">
           <div class="d-flex justify-content-between align-items-center mb-4"><h3 class="mb-0">2026-os versenynaptár</h3><i class="fa-regular fa-calendar-days fs-3"></i></div>
-          {races.map(([month, day, name, place]) => (
+          {races.map((race) => (
             <div class="calendar-row">
-              <div class="date-box"><small>{month}</small><strong>{day}</strong></div>
-              <div><h4>{name}</h4><p><i class="fa-solid fa-location-dot me-2"></i>{place}</p></div>
+              <div class="date-box"><small>{monthFormatter.format(race.data.startDate).replace('.', '').toUpperCase()}</small><strong>{dayRange(race)}</strong></div>
+              <div><h4>{race.data.name}</h4><p><i class="fa-solid fa-location-dot me-2"></i>{race.data.location}</p></div>
               <i class="fa-solid fa-chevron-right ms-auto"></i>
             </div>
           ))}

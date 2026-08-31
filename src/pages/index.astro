@@ -8,17 +8,23 @@ import Results from '../components/Results.astro';
 import Gallery from '../components/Gallery.astro';
 import Sponsors from '../components/Sponsors.astro';
 import Footer from '../components/Footer.astro';
+import { getCollection } from 'astro:content';
+
+const news = (await getCollection('news', ({ data }) => !data.draft)).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 3);
+const races = (await getCollection('races')).sort((a, b) => a.data.startDate.valueOf() - b.data.startDate.valueOf());
+const results = (await getCollection('results')).sort((a, b) => a.data.ranking - b.data.ranking);
+const sponsors = (await getCollection('sponsors')).sort((a, b) => a.data.order - b.data.order);
 ---
 
 <MainLayout>
   <Navbar />
   <main>
     <Hero />
-    <News />
-    <UpcomingRace />
-    <Results />
+    <News news={news} />
+    <UpcomingRace races={races} />
+    <Results results={results} />
     <Gallery />
-    <Sponsors />
+    <Sponsors sponsors={sponsors} />
   </main>
   <Footer />
 </MainLayout>
