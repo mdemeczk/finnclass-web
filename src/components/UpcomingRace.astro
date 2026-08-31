@@ -6,8 +6,9 @@ const { races } = Astro.props;
 const featuredRace = races.find((race) => race.data.featured) ?? races[0];
 const monthFormatter = new Intl.DateTimeFormat('hu-HU', { month: 'short' });
 const fullDateFormatter = new Intl.DateTimeFormat('hu-HU', { year: 'numeric', month: 'long', day: 'numeric' });
+const baseUrl = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
 const noticeUrl = featuredRace.data.noticeUrl
-  ? `${import.meta.env.BASE_URL}${featuredRace.data.noticeUrl.replace(/^\/+/, '')}`
+  ? `${baseUrl}${featuredRace.data.noticeUrl.replace(/^\/+/, '')}`
   : undefined;
 const dayRange = (race: CollectionEntry<'races'>) => race.data.endDate
   ? `${String(race.data.startDate.getDate()).padStart(2, '0')}–${String(race.data.endDate.getDate()).padStart(2, '0')}`
