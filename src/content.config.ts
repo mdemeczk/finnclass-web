@@ -7,7 +7,7 @@ const news = defineCollection({
 });
 const races = defineCollection({
   loader: glob({ base: './src/content/races', pattern: '**/*.json' }),
-  schema: z.object({ name: z.string(), startDate: z.coerce.date(), endDate: z.coerce.date().optional(), location: z.string(), featured: z.boolean().default(false), noticeUrl: z.string().optional() }),
+  schema: z.object({ name: z.string(), startDate: z.coerce.date(), endDate: z.coerce.date().optional(), location: z.string(), published: z.boolean().default(true), featured: z.boolean().default(false), noticeUrl: z.string().optional() }),
 });
 const results = defineCollection({
   loader: glob({ base: './src/content/results', pattern: '**/*.json' }),
