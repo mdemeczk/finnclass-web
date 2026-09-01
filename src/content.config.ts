@@ -3,7 +3,7 @@ import { glob } from 'astro/loaders';
 
 const news = defineCollection({
   loader: glob({ base: './src/content/news', pattern: '**/*.{md,mdx}' }),
-  schema: z.object({ title: z.string(), date: z.coerce.date(), excerpt: z.string(), icon: z.string().default('fa-newspaper'), featured: z.boolean().default(false), draft: z.boolean().default(false) }),
+  schema: z.object({ title: z.string(), date: z.coerce.date(), excerpt: z.string(), image: z.string().optional(), imageAlt: z.string().optional(), icon: z.string().default('fa-newspaper'), featured: z.boolean().default(false), draft: z.boolean().default(false) }),
 });
 const races = defineCollection({
   loader: glob({ base: './src/content/races', pattern: '**/*.json' }),

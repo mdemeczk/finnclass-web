@@ -4,6 +4,7 @@ import type { CollectionEntry } from 'astro:content';
 interface Props { news: CollectionEntry<'news'>[]; }
 const { news } = Astro.props;
 const dateFormatter = new Intl.DateTimeFormat('hu-HU', { year: 'numeric', month: 'long', day: 'numeric' });
+const baseUrl = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
 ---
 
 <section class="section-space" id="hirek">
@@ -16,11 +17,12 @@ const dateFormatter = new Intl.DateTimeFormat('hu-HU', { year: 'numeric', month:
       {news.map((item, index) => (
         <article class="col-md-4">
           <div class:list={['news-card h-100', { featured: index === 0 }]}>
+            {item.data.image && <img class="news-image" src={`${baseUrl}${item.data.image.replace(/^\/+/, '')}`} alt={item.data.imageAlt ?? ''} />}
             <div class="news-icon"><i class={`fa-solid ${item.data.icon}`}></i></div>
             <time datetime={item.data.date.toISOString()}>{dateFormatter.format(item.data.date)}</time>
             <h3>{item.data.title}</h3>
             <p>{item.data.excerpt}</p>
-            <a href="#hirek" aria-label={`Tovább: ${item.data.title}`}>Tovább <i class="fa-solid fa-chevron-right"></i></a>
+            <a href={`${baseUrl}hirek/${item.id}/`} aria-label={`Tovább: ${item.data.title}`}>Tovább <i class="fa-solid fa-chevron-right"></i></a>
           </div>
         </article>
       ))}

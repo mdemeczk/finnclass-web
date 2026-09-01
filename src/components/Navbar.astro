@@ -1,10 +1,11 @@
 ---
+const baseUrl = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
 const links = [
-  ['Hírek', '#hirek'],
-  ['Versenynaptár', '#versenynaptar'],
-  ['Eredmények', '#eredmenyek'],
-  ['Galéria', '#galeria'],
-  ['Kapcsolat', '#kapcsolat'],
+  ['Hírek', `${baseUrl}#hirek`],
+  ['Versenynaptár', `${baseUrl}#versenynaptar`],
+  ['Eredmények', `${baseUrl}#eredmenyek`],
+  ['Galéria', `${baseUrl}#galeria`],
+  ['Kapcsolat', `${baseUrl}#kapcsolat`],
 ];
 ---
 

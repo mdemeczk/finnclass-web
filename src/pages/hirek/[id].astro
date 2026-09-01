@@ -1,0 +1,39 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import MainLayout from '../../layouts/MainLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+export async function getStaticPaths() {
+  const news = await getCollection('news', ({ data }) => !data.draft);
+  return news.map((article) => ({ params: { id: article.id }, props: { article } }));
+}
+
+interface Props { article: CollectionEntry<'news'>; }
+const { article } = Astro.props;
+const { Content } = await render(article);
+const dateFormatter = new Intl.DateTimeFormat('hu-HU', { year: 'numeric', month: 'long', day: 'numeric' });
+const baseUrl = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
+const imageUrl = article.data.image ? `${baseUrl}${article.data.image.replace(/^\/+/, '')}` : undefined;
+---
+
+<MainLayout title={`${article.data.title} | FinnClass.hu`} description={article.data.excerpt}>
+  <Navbar />
+  <main>
+    <header class="article-header text-white">
+      <div class="container py-5">
+        <a class="article-back" href={`${baseUrl}#hirek`}><i class="fa-solid fa-arrow-left me-2"></i>Vissza a hírekhez</a>
+        <p class="eyebrow mt-5 mb-3">FinnClass hírek</p>
+        <h1>{article.data.title}</h1>
+        <time datetime={article.data.date.toISOString()}>{dateFormatter.format(article.data.date)}</time>
+      </div>
+    </header>
+    <article class="article-content container section-space">
+      <div class="mx-auto">
+        {imageUrl && <img class="article-image" src={imageUrl} alt={article.data.imageAlt ?? ''} />}
+        <Content />
+      </div>
+    </article>
+  </main>
+  <Footer />
+</MainLayout>
