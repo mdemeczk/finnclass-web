@@ -11,7 +11,7 @@ const races = defineCollection({
 });
 const results = defineCollection({
   loader: glob({ base: './src/content/results', pattern: '**/*.json' }),
-  schema: z.object({ name: z.string(), sailNumber: z.string(), points: z.number().nonnegative(), ranking: z.number().int().positive(), season: z.number().int() }),
+  schema: z.object({ name: z.string(), sailNumber: z.string(), points: z.number().nonnegative(), ranking: z.number().int().positive(), season: z.number().int(), published: z.boolean().default(true) }),
 });
 const sponsors = defineCollection({
   loader: glob({ base: './src/content/sponsors', pattern: '**/*.json' }),

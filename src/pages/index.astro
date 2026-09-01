@@ -12,7 +12,7 @@ import { getCollection } from 'astro:content';
 
 const news = (await getCollection('news', ({ data }) => !data.draft)).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 3);
 const races = (await getCollection('races', ({ data }) => data.published)).sort((a, b) => a.data.startDate.valueOf() - b.data.startDate.valueOf());
-const results = (await getCollection('results')).sort((a, b) => a.data.ranking - b.data.ranking);
+const results = (await getCollection('results', ({ data }) => data.published)).sort((a, b) => a.data.ranking - b.data.ranking);
 const sponsors = (await getCollection('sponsors')).sort((a, b) => a.data.order - b.data.order);
 ---
 
