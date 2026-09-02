@@ -22,7 +22,7 @@ const dayRange = (race: CollectionEntry<'races'>) => race.data.endDate
         <p class="eyebrow mb-2">Rajtra készen</p>
         <h2 class="display-5 fw-bold mb-4">Következő verseny</h2>
         <div class="next-race p-4 p-md-5">
-          <span class="badge text-bg-warning mb-3">KIEMELT ESEMÉNY</span>
+          <span class="race-badge badge mb-3">KIEMELT ESEMÉNY</span>
           <h3>{featuredRace.data.name}</h3>
           <p class="race-meta"><i class="fa-regular fa-calendar"></i> {fullDateFormatter.format(featuredRace.data.startDate)}{featuredRace.data.endDate && ` – ${fullDateFormatter.format(featuredRace.data.endDate)}`}</p>
           <p class="race-meta"><i class="fa-solid fa-location-dot"></i> {featuredRace.data.location}</p>
