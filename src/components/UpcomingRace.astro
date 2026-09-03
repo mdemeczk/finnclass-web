@@ -7,7 +7,10 @@ const featuredRace = races.find((race) => race.data.featured) ?? races[0];
 const monthFormatter = new Intl.DateTimeFormat('hu-HU', { month: 'short' });
 const fullDateFormatter = new Intl.DateTimeFormat('hu-HU', { year: 'numeric', month: 'long', day: 'numeric' });
 const baseUrl = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
-const noticeUrl = featuredRace.data.noticeUrl
+const getNoticeUrl = (race: CollectionEntry<'races'>) => race.data.noticeUrl
+  ? `${baseUrl}${race.data.noticeUrl.replace(/^\/+/, '')}`
+  : undefined;
+const featuredNoticeUrl = featuredRace.data.noticeUrl
   ? `${baseUrl}${featuredRace.data.noticeUrl.replace(/^\/+/, '')}`
   : undefined;
 const dayRange = (race: CollectionEntry<'races'>) => race.data.endDate
@@ -26,8 +29,8 @@ const dayRange = (race: CollectionEntry<'races'>) => race.data.endDate
           <h3>{featuredRace.data.name}</h3>
           <p class="race-meta"><i class="fa-regular fa-calendar"></i> {fullDateFormatter.format(featuredRace.data.startDate)}{featuredRace.data.endDate && ` – ${fullDateFormatter.format(featuredRace.data.endDate)}`}</p>
           <p class="race-meta"><i class="fa-solid fa-location-dot"></i> {featuredRace.data.location}</p>
-          {noticeUrl
-            ? <a class="btn btn-light mt-3" href={noticeUrl} target="_blank" rel="noreferrer">Versenykiírás <i class="fa-solid fa-file-pdf ms-2"></i></a>
+          {featuredNoticeUrl
+            ? <a class="btn btn-light mt-3" href={featuredNoticeUrl} target="_blank" rel="noreferrer">Versenykiírás <i class="fa-solid fa-file-pdf ms-2"></i></a>
             : <span class="d-block text-white-50 mt-3"><i class="fa-regular fa-clock me-2"></i>A versenykiírás hamarosan elérhető</span>
           }
         </div>
@@ -38,8 +41,12 @@ const dayRange = (race: CollectionEntry<'races'>) => race.data.endDate
           {races.map((race) => (
             <div class="calendar-row">
               <div class="date-box"><small>{monthFormatter.format(race.data.startDate).replace('.', '').toUpperCase()}</small><strong>{dayRange(race)}</strong></div>
-              <div><h4>{race.data.name}</h4><p><i class="fa-solid fa-location-dot me-2"></i>{race.data.location}</p></div>
-              <i class="fa-solid fa-chevron-right ms-auto"></i>
+              <div>
+                <h4>{race.data.name}</h4>
+                <p><i class="fa-solid fa-location-dot me-2"></i>{race.data.location}</p>
+                {getNoticeUrl(race) && <a class="calendar-notice" href={getNoticeUrl(race)} target="_blank" rel="noreferrer"><i class="fa-solid fa-file-pdf me-2"></i>Versenykiírás</a>}
+              </div>
+              <i class="fa-solid fa-chevron-right ms-auto" aria-hidden="true"></i>
             </div>
           ))}
         </div>
