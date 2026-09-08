@@ -1,31 +1,62 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-
-interface Props { results: CollectionEntry<'results'>[]; }
-const { results } = Astro.props;
-const season = results[0]?.data.season ?? new Date().getFullYear();
+import rankings from '../data/rankings.json';
+const years = [...new Set(rankings.map((r) => r.year))].sort((a, b) => b - a);
+const baseUrl = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
+const points = new Intl.NumberFormat('hu-HU', { maximumFractionDigits: 2 });
 ---
-
 <section class="section-space bg-light" id="eredmenyek">
   <div class="container">
-    <div class="row g-5 align-items-center">
-      <div class="col-lg-5">
-        <p class="eyebrow text-primary mb-2">Legutóbbi eredmények</p>
-        <h2 class="mb-3">Finn Ranglista {season}</h2>
-        <p class="text-secondary mb-4">Az éves ranglista a hazai versenyeken elért eredmények alapján.</p>
-        <a class="btn btn-primary" href="#eredmenyek">Teljes eredménylista <i class="fa-solid fa-arrow-right ms-2"></i></a>
+    <p class="eyebrow text-primary mb-2">Eredmények</p>
+    <h2 class="mb-3">Finn ranglisták</h2>
+    <p class="text-secondary">Válassz évet és kategóriát! Az első három helyezett alatt a teljes ranglista PDF-ben is elérhető.</p>
+    <div class="row g-3 mb-4" id="ranking-filters" hidden>
+      <div class="col-sm-4 col-lg-3">
+        <label for="ranking-year" class="form-label">Év</label>
+        <select id="ranking-year" class="form-select">{years.map((year) => <option value={year}>{year}</option>)}</select>
       </div>
-      <div class="col-lg-7">
-        <div class="results-card">
-          {results.map((result) => (
-            <div class="result-row">
-              <span class="place">{result.data.ranking}</span>
-              <span class="result-name"><strong>{result.data.name}</strong><small>{result.data.sailNumber}</small></span>
-              <strong class="ms-auto">{result.data.points} pont</strong>
-            </div>
-          ))}
+      <div class="col-sm-8 col-lg-5">
+        <label for="ranking-category" class="form-label">Kategória</label>
+        <select id="ranking-category" class="form-select"></select>
+      </div>
+    </div>
+    <div aria-live="polite" aria-atomic="true">
+      {rankings.map((ranking) => (
+        <div data-ranking data-year={ranking.year} data-category={ranking.category} class="mb-4">
+          <h3 class="h4 mb-3">{ranking.year} – {ranking.category}</h3>
+          <div class="results-card mb-3">
+            {ranking.leaders.map((leader, index) => (
+              <div class="result-row">
+                <span class="place">{index + 1}</span>
+                <span class="result-name"><strong>{leader.name}</strong><small>{leader.club}</small></span>
+                <strong class="ms-auto text-nowrap">{points.format(leader.points)} pont</strong>
+              </div>
+            ))}
+          </div>
+          <a class="btn btn-primary" href={`${baseUrl}documents/${ranking.pdf}`} target="_blank" rel="noopener noreferrer" aria-label={`Teljes eredménylista: ${ranking.year}, ${ranking.category} (PDF, új ablak)`}>Teljes eredménylista (PDF) <i class="fa-solid fa-arrow-right ms-2" aria-hidden="true"></i></a>
         </div>
-      </div>
+      ))}
     </div>
   </div>
 </section>
+<script>
+  const year = document.querySelector<HTMLSelectElement>('#ranking-year');
+  const category = document.querySelector<HTMLSelectElement>('#ranking-category');
+  const filters = document.querySelector<HTMLElement>('#ranking-filters');
+  const panels = [...document.querySelectorAll<HTMLElement>('[data-ranking]')];
+  if (year && category && filters) {
+    const show = () => {
+      for (const panel of panels) panel.hidden = panel.dataset.year !== year.value || panel.dataset.category !== category.value;
+    };
+    const updateCategories = () => {
+      const previous = category.value;
+      const available = panels.filter((panel) => panel.dataset.year === year.value).map((panel) => panel.dataset.category!);
+      category.replaceChildren(...available.map((name) => new Option(name, name)));
+      if (available.includes(previous)) category.value = previous;
+      show();
+    };
+    year.addEventListener('change', updateCategories);
+    category.addEventListener('change', show);
+    updateCategories();
+    filters.hidden = false;
+  }
+</script>

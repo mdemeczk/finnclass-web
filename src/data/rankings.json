@@ -1,0 +1,112 @@
+[
+  {
+    "year": 2025,
+    "category": "Nyílt",
+    "pdf": "rang_finn_2025-jav.pdf",
+    "leaders": [
+      {
+        "name": "Pallay Tibor",
+        "club": "Tihanyi Hajós Egylet",
+        "points": 496.76
+      },
+      {
+        "name": "Kaiser Kristóf",
+        "club": "Balatonfüredi Yacht Club",
+        "points": 481.54
+      },
+      {
+        "name": "Lukáts Ákos",
+        "club": "Sirály Vízi Sport Club",
+        "points": 471.2
+      }
+    ]
+  },
+  {
+    "year": 2024,
+    "category": "Nyílt",
+    "pdf": "rang_min_finn_nyilt_2024.pdf",
+    "leaders": [
+      {
+        "name": "Evetovic Dávid",
+        "club": "Alba Regia Sport Club",
+        "points": 464.37
+      },
+      {
+        "name": "Székely Antal",
+        "club": "Orfűi Vitorlás Egyesület",
+        "points": 459.56
+      },
+      {
+        "name": "Huszár Géza",
+        "club": "Sirály Vízi Sport Club",
+        "points": 449.54
+      }
+    ]
+  },
+  {
+    "year": 2024,
+    "category": "Masters",
+    "pdf": "rang_min_finn_mast_2024.pdf",
+    "leaders": [
+      {
+        "name": "Gerencsér Gergely",
+        "club": "Tihanyi Hajós Egylet",
+        "points": 443.3
+      },
+      {
+        "name": "Pallay Tibor",
+        "club": "Tihanyi Hajós Egylet",
+        "points": 355.85
+      },
+      {
+        "name": "Mészáros Zsolt Balázs",
+        "club": "Alba Regia Sport Club",
+        "points": 278.41
+      }
+    ]
+  },
+  {
+    "year": 2024,
+    "category": "Grand Masters",
+    "pdf": "rang_min_finn_gm_2024.pdf",
+    "leaders": [
+      {
+        "name": "Huszár Géza",
+        "club": "Sirály Vízi Sport Club",
+        "points": 449.54
+      },
+      {
+        "name": "Lukáts Ákos",
+        "club": "Sirály Vízi Sport Club",
+        "points": 384
+      },
+      {
+        "name": "Rutai István",
+        "club": "Tihanyi Hajós Egylet",
+        "points": 320.42
+      }
+    ]
+  },
+  {
+    "year": 2024,
+    "category": "Grand Grand Masters",
+    "pdf": "rang_min_finn_ggm_2024.pdf",
+    "leaders": [
+      {
+        "name": "Székely Antal",
+        "club": "Orfűi Vitorlás Egyesület",
+        "points": 459.56
+      },
+      {
+        "name": "Demeczky Mihály Zoltán",
+        "club": "Alba Regia Sport Club",
+        "points": 322.16
+      },
+      {
+        "name": "Csányi Zoltán",
+        "club": "Sirály Vízi Sport Club",
+        "points": 297.77
+      }
+    ]
+  }
+]
