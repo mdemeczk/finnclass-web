@@ -13,13 +13,16 @@ h2 { color:var(--navy); font-size:clamp(2rem,4vw,3rem); font-weight:800; }
 .brand-logo { height:58px; object-fit:contain; width:44px; }.footer-logo { height:82px; object-fit:contain; width:62px; }
 .nav-link { color:#dcecf2; font-size:.92rem; font-weight:700; padding:.75rem .85rem!important; }
 .nav-link:hover { color:var(--accent); }
-.hero { background:linear-gradient(120deg,#1d6078,#2f8ca6); min-height:640px; overflow:hidden; position:relative; }
+.hero { background:linear-gradient(120deg,#edfaff 0%,#d3f0fa 48%,#a8dfea 100%); color:#123e54; min-height:640px; overflow:hidden; position:relative; }
 .hero:after { background:var(--light); bottom:-1px; clip-path:polygon(0 70%,100% 0,100% 100%,0 100%); content:""; height:85px; left:0; position:absolute; width:100%; }
-.hero h1 span { color:inherit; }
-.hero .lead { color:#d8edf4; font-size:1.22rem; line-height:1.75; }
-.hero-waves { border:1px solid rgba(255,255,255,.18); border-radius:50%; height:540px; position:absolute; right:-120px; top:-130px; width:540px; }
-.hero-waves:before,.hero-waves:after { border:1px solid rgba(255,255,255,.1); border-radius:50%; content:""; inset:55px; position:absolute; }
-.hero-waves:after { inset:115px; }
+.hero h1 span { color:#146782; }
+.hero .lead { color:#315c70; font-size:1.22rem; line-height:1.75; }
+/* Light water treatment for the homepage hero. */
+.hero-waves { position:absolute; inset:0; pointer-events:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 640' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' fill-opacity='.32' d='M0 260C240 100 390 410 710 270S1160 110 1440 220V640H0Z'/%3E%3Cpath fill='%237ac9df' fill-opacity='.2' d='M0 430C260 220 510 510 820 360S1180 270 1440 360V640H0Z'/%3E%3Cpath fill='%23ffffff' fill-opacity='.36' d='M0 530C300 370 530 610 850 470S1190 390 1440 490V640H0Z'/%3E%3Cpath fill='none' stroke='%23ffffff' stroke-opacity='.48' stroke-width='2' d='M0 300C260 140 410 450 730 310S1160 150 1440 260M0 460C260 250 510 540 820 390S1180 300 1440 390'/%3E%3C/svg%3E"); background-size:100% 100%; }
+.hero .eyebrow { color:#225d75; }
+.hero .btn-outline-primary { color:#174f69; border-color:#36758e; }
+.hero .btn-outline-primary:hover { color:#fff; background:#174f69; border-color:#174f69; }
+
 .btn { border-radius:3px; font-weight:750; padding:.8rem 1.25rem; }
 .btn-accent { background:var(--accent); border-color:var(--accent); color:white; }
 .btn-accent:hover { background:var(--accent-dark); border-color:var(--accent-dark); color:white; }
