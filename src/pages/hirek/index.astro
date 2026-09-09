@@ -1,0 +1,65 @@
+---
+import { getCollection } from 'astro:content';
+import MainLayout from '../../layouts/MainLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const news = (await getCollection('news', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const dateFormatter = new Intl.DateTimeFormat('hu-HU', { year: 'numeric', month: 'long', day: 'numeric' });
+const baseUrl = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
+---
+
+<MainLayout title="Hírarchívum | FinnClass.hu" description="A Magyar Finn Osztályszövetség hírei és korábbi cikkei.">
+  <Navbar />
+  <main>
+    <header class="archive-header">
+      <div class="container py-5">
+        <p class="eyebrow mb-2">FinnClass.hu</p>
+        <h1>Hírarchívum</h1>
+        <p class="lead mb-0">Aktuális hírek, beszámolók és történetek a magyar Finn közösség életéből.</p>
+      </div>
+    </header>
+    <section class="container section-space">
+      <div class="search-field mb-3">
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        <label class="visually-hidden" for="news-search">Keresés a cikkek között</label>
+        <input class="news-search" id="news-search" type="search" placeholder="Keresés cím, téma vagy év szerint…" autocomplete="off" data-news-search />
+      </div>
+      <p class="text-secondary mb-5" data-search-result role="status" aria-live="polite">{news.length} cikk</p>
+      <div data-news-list>
+        {news.map((item) => {
+          const searchable = `${item.data.title} ${item.data.excerpt} ${item.data.date.getFullYear()}`.toLocaleLowerCase('hu-HU');
+          return (
+            <article class="archive-card" data-news-item data-search={searchable}>
+              <time datetime={item.data.date.toISOString()}>{dateFormatter.format(item.data.date)}</time>
+              <h2><a href={`${baseUrl}hirek/${item.id}/`}>{item.data.title}</a></h2>
+              <p>{item.data.excerpt}</p>
+              <a class="text-link" href={`${baseUrl}hirek/${item.id}/`}>Cikk elolvasása <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+          );
+        })}
+      </div>
+      <p class="alert alert-light border mt-4 d-none" data-no-results>Nincs a keresésnek megfelelő cikk.</p>
+    </section>
+  </main>
+  <Footer />
+  <script>
+    const searchInput = document.querySelector<HTMLInputElement>('[data-news-search]');
+    const articles = Array.from(document.querySelectorAll<HTMLElement>('[data-news-item]'));
+    const result = document.querySelector<HTMLElement>('[data-search-result]');
+    const noResults = document.querySelector<HTMLElement>('[data-no-results]');
+
+    searchInput?.addEventListener('input', () => {
+      const query = searchInput.value.trim().toLocaleLowerCase('hu-HU');
+      let visible = 0;
+      articles.forEach((article) => {
+        const matches = !query || article.dataset.search?.includes(query);
+        article.classList.toggle('d-none', !matches);
+        if (matches) visible += 1;
+      });
+      if (result) result.textContent = query ? `${visible} találat` : `${articles.length} cikk`;
+      noResults?.classList.toggle('d-none', visible !== 0);
+    });
+  </script>
+</MainLayout>
