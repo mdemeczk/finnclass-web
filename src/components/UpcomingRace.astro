@@ -33,6 +33,12 @@ const dayRange = (race: CollectionEntry<'races'>) => race.data.endDate
             ? <a class="btn btn-light mt-3" href={featuredNoticeUrl} target="_blank" rel="noreferrer">Versenykiírás <i class="fa-solid fa-file-pdf ms-2"></i></a>
             : <span class="d-block text-white-50 mt-3"><i class="fa-regular fa-clock me-2"></i>A versenykiírás hamarosan elérhető</span>
           }
+          {featuredRace.data.documents.length > 0 && <div class="mt-4">
+            <h4 class="h6">Bajnoksági információk</h4>
+            <div class="d-flex flex-column align-items-start gap-2">
+              {featuredRace.data.documents.map((doc) => <a class="btn btn-outline-light btn-sm" href={`${baseUrl}${doc.path}`} target="_blank" rel="noreferrer">{doc.label}</a>)}
+            </div>
+          </div>}
         </div>
       </div>
       <div class="col-lg-7">
