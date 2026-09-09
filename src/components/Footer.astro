@@ -1,7 +1,7 @@
 ---
 const baseUrl = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
 const pageUrl = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin).href;
-const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}`;
+const facebookGroupUrl = 'https://www.facebook.com/groups/finnclass.hu';
 ---
 
 <footer class="footer text-white" id="kapcsolat">
@@ -18,9 +18,8 @@ const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeU
       <div class="col-6 col-lg-4">
         <h2 class="h6">Kövess minket</h2>
         <div class="d-flex flex-column align-items-start gap-2">
-          <a class="btn btn-outline-light btn-sm" href="https://www.facebook.com/groups/finnclass.hu" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook me-2" aria-hidden="true"></i>Finnclass Facebook-csoport</a>
-          <a class="btn btn-outline-light btn-sm" data-facebook-share href={facebookShareUrl} target="_blank" rel="noopener noreferrer">Oldal megosztása Facebookon</a>
-          <button class="btn btn-outline-light btn-sm" type="button" data-copy-page data-url={pageUrl} hidden>Oldal linkjének másolása</button>
+          <a class="btn btn-outline-light btn-sm" href={facebookGroupUrl} target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook me-2" aria-hidden="true"></i>Finnclass Facebook-csoport</a>
+          <a class="btn btn-outline-light btn-sm" data-facebook-group-share data-url={pageUrl} href={facebookGroupUrl} target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-share-nodes me-2" aria-hidden="true"></i>Megosztás a Finnclass.hu csoportban</a>
           <small data-copy-status role="status" aria-live="polite"></small>
         </div>
       </div>
@@ -30,20 +29,17 @@ const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeU
 </footer>
 
 <script>
-  const share = document.querySelector<HTMLAnchorElement>('[data-facebook-share]');
-  const copy = document.querySelector<HTMLButtonElement>('[data-copy-page]');
+  const groupShare = document.querySelector<HTMLAnchorElement>('[data-facebook-group-share]');
   const status = document.querySelector<HTMLElement>('[data-copy-status]');
-  if (share && copy && status) {
+  if (groupShare && status) {
     const local = ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname);
-    const url = local ? copy.dataset.url! : `${location.origin}${location.pathname}`;
-    share.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
-    copy.hidden = false;
-    copy.addEventListener('click', async () => {
+    const url = local ? groupShare.dataset.url! : `${location.origin}${location.pathname}`;
+    groupShare.addEventListener('click', async () => {
       try {
         await navigator.clipboard.writeText(url);
-        status.textContent = 'Link másolva. Illeszd be a csoport bejegyzésébe!';
+        status.textContent = 'A linket kimásoltuk. Illeszd be a megnyíló csoport új bejegyzésébe!';
       } catch {
-        status.textContent = `Másold ki ezt a linket: ${url}`;
+        status.textContent = `A csoport megnyílt. A megosztandó link: ${url}`;
       }
     });
   }

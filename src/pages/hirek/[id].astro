@@ -15,6 +15,8 @@ const { Content } = await render(article);
 const dateFormatter = new Intl.DateTimeFormat('hu-HU', { year: 'numeric', month: 'long', day: 'numeric' });
 const baseUrl = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
 const imageUrl = article.data.image ? `${baseUrl}${article.data.image.replace(/^\/+/, '')}` : undefined;
+const pageUrl = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin).href;
+const facebookGroupUrl = 'https://www.facebook.com/groups/finnclass.hu';
 ---
 
 <MainLayout title={`${article.data.title} | FinnClass.hu`} description={article.data.excerpt}>
@@ -32,8 +34,29 @@ const imageUrl = article.data.image ? `${baseUrl}${article.data.image.replace(/^
       <div class="mx-auto">
         {imageUrl && <img class="article-image" src={imageUrl} alt={article.data.imageAlt ?? ''} />}
         <Content />
+        <aside class="mt-5 border-top pt-4" aria-labelledby="article-share-title">
+          <h2 class="h5 mb-3" id="article-share-title">Oszd meg a közösséggel!</h2>
+          <a class="btn btn-primary" data-article-group-share data-url={pageUrl} href={facebookGroupUrl} target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook me-2" aria-hidden="true"></i>Megosztás a Finnclass.hu csoportban</a>
+          <small class="d-block mt-2 text-secondary" data-article-share-status role="status" aria-live="polite">A gomb kimásolja a cikk linkjét, és megnyitja a Facebook-csoportot.</small>
+        </aside>
       </div>
     </article>
   </main>
   <Footer />
+  <script>
+    const articleShare = document.querySelector<HTMLAnchorElement>('[data-article-group-share]');
+    const articleShareStatus = document.querySelector<HTMLElement>('[data-article-share-status]');
+    if (articleShare && articleShareStatus) {
+      const local = ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname);
+      const url = local ? articleShare.dataset.url! : `${location.origin}${location.pathname}`;
+      articleShare.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(url);
+          articleShareStatus.textContent = 'A cikk linkjét kimásoltuk. Illeszd be a megnyíló csoport új bejegyzésébe!';
+        } catch {
+          articleShareStatus.textContent = `A csoport megnyílt. A megosztandó link: ${url}`;
+        }
+      });
+    }
+  </script>
 </MainLayout>
