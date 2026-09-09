@@ -37,7 +37,7 @@ const facebookGroupUrl = 'https://www.facebook.com/groups/finnclass.hu';
         <Content />
         <aside class="mt-5 border-top pt-4" aria-labelledby="article-share-title">
           <h2 class="h5 mb-3" id="article-share-title">Oszd meg a közösséggel!</h2>
-          <a class="btn btn-primary" data-article-group-share data-url={pageUrl} href={facebookGroupUrl} target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook me-2" aria-hidden="true"></i>Megosztás a Finnclass.hu csoportban</a>
+          <a class="btn btn-primary" data-article-group-share data-url={pageUrl} href={facebookGroupUrl} rel="noopener noreferrer"><i class="fa-brands fa-facebook me-2" aria-hidden="true"></i>Megosztás a Finnclass.hu csoportban</a>
           <small class="d-block mt-2 text-secondary" data-article-share-status role="status" aria-live="polite">A gomb kimásolja a cikk linkjét, és megnyitja a Facebook-csoportot.</small>
         </aside>
       </div>
@@ -49,13 +49,15 @@ const facebookGroupUrl = 'https://www.facebook.com/groups/finnclass.hu';
     const articleShareStatus = document.querySelector<HTMLElement>('[data-article-share-status]');
     if (articleShare && articleShareStatus) {
       const url = articleShare.dataset.url!;
-      articleShare.addEventListener('click', async () => {
+      articleShare.addEventListener('click', async (event) => {
+        event.preventDefault();
         try {
           await navigator.clipboard.writeText(url);
           articleShareStatus.textContent = 'A cikk linkjét kimásoltuk. Illeszd be a megnyíló csoport új bejegyzésébe!';
         } catch {
           articleShareStatus.textContent = `A csoport megnyílt. A megosztandó link: ${url}`;
         }
+        window.location.href = articleShare.href;
       });
     }
   </script>
