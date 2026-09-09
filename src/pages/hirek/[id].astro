@@ -15,7 +15,8 @@ const { Content } = await render(article);
 const dateFormatter = new Intl.DateTimeFormat('hu-HU', { year: 'numeric', month: 'long', day: 'numeric' });
 const baseUrl = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
 const imageUrl = article.data.image ? `${baseUrl}${article.data.image.replace(/^\/+/, '')}` : undefined;
-const pageUrl = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin).href;
+const canonicalPath = Astro.url.pathname.replace(/^\/finnclass-web(?=\/|$)/, '') || '/';
+const pageUrl = new URL(canonicalPath, 'http://new.finnclass.hu').href;
 const facebookGroupUrl = 'https://www.facebook.com/groups/finnclass.hu';
 ---
 
@@ -47,8 +48,7 @@ const facebookGroupUrl = 'https://www.facebook.com/groups/finnclass.hu';
     const articleShare = document.querySelector<HTMLAnchorElement>('[data-article-group-share]');
     const articleShareStatus = document.querySelector<HTMLElement>('[data-article-share-status]');
     if (articleShare && articleShareStatus) {
-      const local = ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname);
-      const url = local ? articleShare.dataset.url! : `${location.origin}${location.pathname}`;
+      const url = articleShare.dataset.url!;
       articleShare.addEventListener('click', async () => {
         try {
           await navigator.clipboard.writeText(url);

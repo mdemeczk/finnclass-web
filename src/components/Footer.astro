@@ -1,6 +1,7 @@
 ---
 const baseUrl = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
-const pageUrl = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin).href;
+const canonicalPath = Astro.url.pathname.replace(/^\/finnclass-web(?=\/|$)/, '') || '/';
+const pageUrl = new URL(canonicalPath, 'http://new.finnclass.hu').href;
 const facebookGroupUrl = 'https://www.facebook.com/groups/finnclass.hu';
 ---
 
@@ -32,8 +33,7 @@ const facebookGroupUrl = 'https://www.facebook.com/groups/finnclass.hu';
   const groupShare = document.querySelector<HTMLAnchorElement>('[data-facebook-group-share]');
   const status = document.querySelector<HTMLElement>('[data-copy-status]');
   if (groupShare && status) {
-    const local = ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname);
-    const url = local ? groupShare.dataset.url! : `${location.origin}${location.pathname}`;
+    const url = groupShare.dataset.url!;
     groupShare.addEventListener('click', async () => {
       try {
         await navigator.clipboard.writeText(url);
