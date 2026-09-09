@@ -1,5 +1,7 @@
 ---
 const baseUrl = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
+const pageUrl = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin).href;
+const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}`;
 ---
 
 <footer class="footer text-white" id="kapcsolat">
@@ -15,9 +17,34 @@ const baseUrl = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
       </div>
       <div class="col-6 col-lg-4">
         <h2 class="h6">Kövess minket</h2>
-        <div class="social-links"><a href="#kapcsolat" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#kapcsolat" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="#kapcsolat" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a></div>
+        <div class="d-flex flex-column align-items-start gap-2">
+          <a class="btn btn-outline-light btn-sm" href="https://www.facebook.com/groups/finnclass.hu" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook me-2" aria-hidden="true"></i>Finnclass Facebook-csoport</a>
+          <a class="btn btn-outline-light btn-sm" data-facebook-share href={facebookShareUrl} target="_blank" rel="noopener noreferrer">Oldal megosztása Facebookon</a>
+          <button class="btn btn-outline-light btn-sm" type="button" data-copy-page data-url={pageUrl} hidden>Oldal linkjének másolása</button>
+          <small data-copy-status role="status" aria-live="polite"></small>
+        </div>
       </div>
     </div>
   </div>
   <div class="footer-bottom py-3"><div class="container d-flex flex-wrap justify-content-between gap-2"><small>© 2026 Magyar Finn Osztályszövetség</small><small>Fair sailing. Fast sailing.</small></div></div>
 </footer>
+
+<script>
+  const share = document.querySelector<HTMLAnchorElement>('[data-facebook-share]');
+  const copy = document.querySelector<HTMLButtonElement>('[data-copy-page]');
+  const status = document.querySelector<HTMLElement>('[data-copy-status]');
+  if (share && copy && status) {
+    const local = ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname);
+    const url = local ? copy.dataset.url! : `${location.origin}${location.pathname}`;
+    share.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+    copy.hidden = false;
+    copy.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(url);
+        status.textContent = 'Link másolva. Illeszd be a csoport bejegyzésébe!';
+      } catch {
+        status.textContent = `Másold ki ezt a linket: ${url}`;
+      }
+    });
+  }
+</script>
