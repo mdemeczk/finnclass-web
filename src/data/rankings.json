@@ -108,5 +108,105 @@
         "points": 297.77
       }
     ]
+  },
+  {
+    "year": 2023,
+    "category": "Nyílt",
+    "pdf": "rang_min_finn_2023.pdf",
+    "leaders": [
+      { "name": "Pallay Tibor", "club": "Tihanyi Hajós Egylet", "points": 486.24 },
+      { "name": "Huszár Géza", "club": "Sirály Vízi Sport Club", "points": 473.81 },
+      { "name": "Székely Antal", "club": "Orfűi Vitorlás Egyesület", "points": 466.31 }
+    ]
+  },
+  {
+    "year": 2023,
+    "category": "Masters",
+    "pdf": "rang_min_finnm_2023.pdf",
+    "leaders": [
+      { "name": "Pallay Tibor", "club": "Tihanyi Hajós Egylet", "points": 486.24 },
+      { "name": "Huszár Géza", "club": "Sirály Vízi Sport Club", "points": 473.81 },
+      { "name": "Székely Antal", "club": "Orfűi Vitorlás Egyesület", "points": 466.31 }
+    ]
+  },
+  {
+    "year": 2023,
+    "category": "Grand Masters",
+    "pdf": "rang_min_finngm_2023.pdf",
+    "leaders": [
+      { "name": "Huszár Géza", "club": "Sirály Vízi Sport Club", "points": 473.81 },
+      { "name": "Székely Antal", "club": "Orfűi Vitorlás Egyesület", "points": 466.31 },
+      { "name": "Lukáts Ákos", "club": "Sirály Vízi Sport Club", "points": 455.07 }
+    ]
+  },
+  {
+    "year": 2023,
+    "category": "Junior",
+    "pdf": "rang_min_finnj_2023.pdf",
+    "leaders": [
+      { "name": "Rácz Bence Zsolt", "club": "Tihanyi Hajós Egylet", "points": 408.12 },
+      { "name": "Svastits Attila", "club": "Keszthelyi Yacht Club", "points": 375.07 },
+      { "name": "Németh Domonkos", "club": "Tihanyi Hajós Egylet", "points": 127.27 }
+    ]
+  },
+  {
+    "year": 2022,
+    "category": "Nyílt",
+    "pdf": "rang_min_finn_2022.pdf",
+    "leaders": [
+      { "name": "Huszár Géza", "club": "Sirály Vízi Sport Club", "points": 368.3 },
+      { "name": "Lukáts Ákos", "club": "Sirály Vízi Sport Club", "points": 364.1 },
+      { "name": "Székely Antal", "club": "Orfűi Vitorlás Egyesület", "points": 361.8 }
+    ]
+  },
+  {
+    "year": 2022,
+    "category": "Masters",
+    "pdf": "rang_min_finn_masters_2022.pdf",
+    "leaders": [
+      { "name": "Huszár Géza", "club": "Sirály Vízi Sport Club", "points": 368.3 },
+      { "name": "Lukáts Ákos", "club": "Sirály Vízi Sport Club", "points": 364.1 },
+      { "name": "Székely Antal", "club": "Orfűi Vitorlás Egyesület", "points": 361.8 }
+    ]
+  },
+  {
+    "year": 2022,
+    "category": "Grand Masters",
+    "pdf": "rang_min_finn_gm_2022.pdf",
+    "leaders": [
+      { "name": "Huszár Géza", "club": "Sirály Vízi Sport Club", "points": 368.3 },
+      { "name": "Lukáts Ákos", "club": "Sirály Vízi Sport Club", "points": 364.1 },
+      { "name": "Székely Antal", "club": "Orfűi Vitorlás Egyesület", "points": 361.8 }
+    ]
+  },
+  {
+    "year": 2021,
+    "category": "Nyílt",
+    "pdf": "rang_min_finn_2021.pdf",
+    "leaders": [
+      { "name": "Németh Domonkos", "club": "Tihanyi Hajós Egylet", "points": 377.81 },
+      { "name": "Lukáts Ákos", "club": "Sirály Vízi Sport Club", "points": 365.21 },
+      { "name": "Földesi Péter", "club": "Tihanyi Hajós Egylet", "points": 350.44 }
+    ]
+  },
+  {
+    "year": 2020,
+    "category": "Nyílt",
+    "pdf": "rang_min_finn_2020.pdf",
+    "leaders": [
+      { "name": "Németh Domonkos", "club": "Tihanyi Hajós Egylet", "points": 495.56 },
+      { "name": "Huszár Géza", "club": "Sirály Vízi Sport Club", "points": 483.61 },
+      { "name": "Székely Antal", "club": "Orfűi Vitorlás Egyesület", "points": 474.59 }
+    ]
+  },
+  {
+    "year": 2019,
+    "category": "Nyílt",
+    "pdf": "rang_min_finn_2019.pdf",
+    "leaders": [
+      { "name": "Huszár Géza", "club": "Sirály Vízi SC", "points": 484.79 },
+      { "name": "Lukáts Ákos", "club": "Sirály Vízi SC", "points": 470.35 },
+      { "name": "Székely Antal", "club": "Orfűi Vitorlás Egyesület", "points": 467.54 }
+    ]
   }
 ]
