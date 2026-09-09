@@ -208,5 +208,85 @@
       { "name": "Lukáts Ákos", "club": "Sirály Vízi SC", "points": 470.35 },
       { "name": "Székely Antal", "club": "Orfűi Vitorlás Egyesület", "points": 467.54 }
     ]
+  },
+  {
+    "year": 2018,
+    "category": "Nyílt",
+    "pdf": "rang_min_finn_2018.pdf",
+    "leaders": [
+      { "name": "Huszár Géza", "club": "Sirály Vízi SC", "points": 493.61 },
+      { "name": "Lukáts Ákos", "club": "Sirály Vízi SC", "points": 473.12 },
+      { "name": "Németh Domonkos", "club": "Tihanyi Hajós Egylet", "points": 468.2 }
+    ]
+  },
+  {
+    "year": 2017,
+    "category": "Nyílt",
+    "pdf": "rang_min_finn_2017.pdf",
+    "leaders": [
+      { "name": "Ainslie Ian Richard", "club": "Kereked Vitorlás Klub", "points": 481.32 },
+      { "name": "Huszár Géza", "club": "Sirály Vízi SC", "points": 471.47 },
+      { "name": "Lukáts Ákos", "club": "Sirály Vízi SC", "points": 466.59 }
+    ]
+  },
+  {
+    "year": 2015,
+    "category": "Nyílt",
+    "pdf": "rang_min_finn_2015.pdf",
+    "leaders": [
+      { "name": "Lukáts Ákos", "club": "SIR", "points": 541.45 },
+      { "name": "Kaiser Kristóf", "club": "Kalti MSE", "points": 533.68 },
+      { "name": "Demeczky Mihály Zoltán", "club": "Alba Regia Sport Club", "points": 486.06 }
+    ]
+  },
+  {
+    "year": 2014,
+    "category": "Nyílt",
+    "pdf": "rang_finn_2014.pdf",
+    "leaders": [
+      { "name": "Lukáts Ákos", "club": "Sirály Vízi Sport Club", "points": 476.26 },
+      { "name": "Huszár Géza", "club": "Sirály Vízi Sport Club", "points": 471.17 },
+      { "name": "Haidekker Péter", "club": "Magyar Villamos Művek Sportegyesület", "points": 419.66 }
+    ]
+  },
+  {
+    "year": 2013,
+    "category": "Nyílt",
+    "pdf": "rang_min_finn_2013.pdf",
+    "leaders": [
+      { "name": "Huszár Géza", "club": "Sirály Vízi Sport Club", "points": 142.8 },
+      { "name": "Beliczay Márton", "club": "Alba Regia Sport Club", "points": 132.8 },
+      { "name": "Lukáts Ákos", "club": "Balatoni Yacht Club", "points": 125.7 }
+    ]
+  },
+  {
+    "year": 2012,
+    "category": "Nyílt",
+    "pdf": "rang_finn_2012.pdf",
+    "leaders": [
+      { "name": "Pál Gaszton", "club": "Balatoni Yacht Club", "points": 146.2 },
+      { "name": "Huszár Géza", "club": "Sirály Vízi SC", "points": 143.3 },
+      { "name": "Sipos Péter", "club": "Alba Regia Sport Club", "points": 132.5 }
+    ]
+  },
+  {
+    "year": 2011,
+    "category": "Nyílt",
+    "pdf": "rang_min_finn_2011.pdf",
+    "leaders": [
+      { "name": "Huszár Géza", "club": "Sirály Vízi SC", "points": 127 },
+      { "name": "Haidekker Péter", "club": "AYC", "points": 107.8 },
+      { "name": "Sipos Péter", "club": "Alba Regia Sport Club", "points": 104.4 }
+    ]
+  },
+  {
+    "year": 2010,
+    "category": "Nyílt",
+    "pdf": "rang_min_finn_2010.pdf",
+    "leaders": [
+      { "name": "Beliczay Márton", "club": "Alba Regia Sport Club", "points": 139.4 },
+      { "name": "Huszár Géza", "club": "Sirály Vízi SC", "points": 136.2 },
+      { "name": "Pál Gaszton", "club": "Balatoni Yacht Club", "points": 122 }
+    ]
   }
 ]
