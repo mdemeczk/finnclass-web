@@ -5,6 +5,7 @@
   "location": "Balatonföldvár, Spartacus telep",
   "published": true,
   "featured": true,
+  "noticeUrl": "documents/finn-ob-2026-versenykiiras.pdf",
   "documents": [
     { "label": "Érkezési tájékoztató – magyar (PDF)", "path": "documents/finn-ob-2026-arrival-hu.pdf" },
     { "label": "Arrival information – English (PDF)", "path": "documents/finn-ob-2026-arrival-en.pdf" }
