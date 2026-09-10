@@ -58,5 +58,26 @@ const dayRange = (race: CollectionEntry<'races'>) => race.data.endDate
         </div>
       </div>
     </div>
+    {featuredRace.data.information && (
+      <div class="race-information mt-5">
+        <div class="d-flex flex-wrap justify-content-between align-items-end gap-2 mb-4">
+          <div>
+            <p class="eyebrow mb-2">Érkezés és helyszín</p>
+            <h3 class="h2 mb-0">Helyszíni tudnivalók</h3>
+          </div>
+          {featuredRace.data.information.source && <small>{featuredRace.data.information.source}</small>}
+        </div>
+        <div class="row g-4">
+          {featuredRace.data.information.sections.map((section) => (
+            <article class="col-md-6">
+              <div class="race-info-card h-100">
+                <h4><i class={`fa-solid ${section.icon} me-2`} aria-hidden="true"></i>{section.title}</h4>
+                {section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    )}
   </div>
 </section>

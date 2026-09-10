@@ -7,7 +7,24 @@ const news = defineCollection({
 });
 const races = defineCollection({
   loader: glob({ base: './src/content/races', pattern: '**/*.json' }),
-  schema: z.object({ name: z.string(), startDate: z.coerce.date(), endDate: z.coerce.date().optional(), location: z.string(), published: z.boolean().default(true), featured: z.boolean().default(false), noticeUrl: z.string().optional(), documents: z.array(z.object({ label: z.string(), path: z.string() })).default([]) }),
+  schema: z.object({
+    name: z.string(),
+    startDate: z.coerce.date(),
+    endDate: z.coerce.date().optional(),
+    location: z.string(),
+    published: z.boolean().default(true),
+    featured: z.boolean().default(false),
+    noticeUrl: z.string().optional(),
+    documents: z.array(z.object({ label: z.string(), path: z.string() })).default([]),
+    information: z.object({
+      source: z.string().optional(),
+      sections: z.array(z.object({
+        title: z.string(),
+        icon: z.string().default('fa-circle-info'),
+        paragraphs: z.array(z.string()),
+      })),
+    }).optional(),
+  }),
 });
 const results = defineCollection({
   loader: glob({ base: './src/content/results', pattern: '**/*.json' }),
