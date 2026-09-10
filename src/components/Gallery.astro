@@ -5,6 +5,7 @@ const moments = [
   ['fa-sailboat', 'A rajtvonalon'],
   ['fa-medal', 'Dobogós pillanatok'],
 ];
+const baseUrl = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
 ---
 
 <section class="section-space" id="galeria">
@@ -13,9 +14,49 @@ const moments = [
     <div class="gallery-grid">
       {moments.map(([icon, label], index) => (
         <div class:list={['gallery-item', `gallery-${index + 1}`]}>
-          <i class={`fa-solid ${icon}`}></i><span>{label}</span>
+          {index === 1 ? <a class="gallery-open" href={`${baseUrl}images/vb/2017—__VB-HUN6-rajtutan.jpg`} aria-label="Friss szélben: a 2017 Gold Cup képének megnyitása nagyban" aria-haspopup="dialog">
+            <img class="gallery-photo" src={`${baseUrl}images/vb/2017—__VB-HUN6-rajtutan.jpg`} alt="HUN 6 és a nemzetközi Finn-mezőny rajt után a 2017-es Gold Cupon Balatonföldváron. Fotó: Robert Deaves." loading="lazy" width="1200" height="800" />
+            <span class="gallery-photo-caption">2017 Gold Cup – Tuss vitorlával a friss szélben<small>Fotó: Robert Deaves</small></span>
+          </a> : <><i class={`fa-solid ${icon}`}></i><span>{label}</span></>}
         </div>
       ))}
     </div>
   </div>
 </section>
+
+<dialog id="gallery-viewer" aria-labelledby="gallery-viewer-caption">
+  <button type="button" class="viewer-close" autofocus aria-label="Kép bezárása">Bezárás ×</button>
+  <figure>
+    <img src={`${baseUrl}images/vb/2017—__VB-HUN6-rajtutan.jpg`} alt="HUN 6 a nemzetközi Finn-mezőnyben, a 2017-es Gold Cupon" width="1200" height="800" loading="lazy" />
+    <figcaption id="gallery-viewer-caption">2017 Gold Cup – Tuss vitorlával a friss szélben<br />Fotó: Robert Deaves</figcaption>
+  </figure>
+</dialog>
+
+<script>
+  const viewer = document.querySelector<HTMLDialogElement>('#gallery-viewer');
+  const opener = document.querySelector<HTMLAnchorElement>('.gallery-open');
+  if (viewer && opener) {
+    opener.addEventListener('click', (event) => {
+      if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      viewer.showModal();
+    });
+    viewer.querySelector('button')?.addEventListener('click', () => viewer.close());
+    viewer.addEventListener('click', (event) => { if (event.target === viewer) viewer.close(); });
+    viewer.addEventListener('close', () => opener.focus());
+  }
+</script>
+
+<style>
+  .gallery-open { position:absolute; inset:0; display:block; cursor:zoom-in; }
+  .gallery-open:focus-visible { outline:3px solid white; outline-offset:-4px; }
+  #gallery-viewer { width:min(1280px,96vw); max-width:96vw; max-height:94dvh; padding:1rem; border:0; border-radius:8px; background:#092f43; color:white; }
+  #gallery-viewer::backdrop { background:rgba(0,15,25,.85); }
+  #gallery-viewer figure { margin:0; text-align:center; }
+  #gallery-viewer img { display:block; width:100%; height:auto; max-height:72dvh; object-fit:contain; }
+  #gallery-viewer figcaption { padding-top:.75rem; }
+  .viewer-close { display:block; margin:0 0 .75rem auto; padding:.4rem .8rem; background:white; color:#092f43; border:0; border-radius:4px; }
+  .gallery-photo { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+  .gallery-item .gallery-photo-caption { position:absolute; bottom:0; left:0; width:100%; padding:2.5rem 1rem .8rem; background:linear-gradient(transparent,rgba(0,25,40,.88)); color:white; font-size:.95rem; line-height:1.4; }
+  .gallery-photo-caption small { display:block; font-size:.75rem; font-weight:400; margin-top:.2rem; }
+</style>
