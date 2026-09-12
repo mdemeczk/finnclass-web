@@ -6,6 +6,11 @@ const moments = [
   ['fa-medal', 'Dobogós pillanatok'],
 ];
 const baseUrl = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
+const startPhotos = [
+  ['-MEC-before-start-681-Misi2011-5.jpg', 'Finn-mezőny a rajtvonalon, felhős ég alatt'],
+  ['P1010019.JPG', 'Finn hajók a rajtbója mellett'],
+  ['P1010020.JPG', 'A rajtvonalon felsorakozó Finn-mezőny'],
+].map(([file, caption]) => ({ src: `${baseUrl}images/Rajtonalon/${file}`, caption }));
 ---
 
 <section class="section-space" id="galeria">
@@ -17,6 +22,9 @@ const baseUrl = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
           {index === 1 ? <a class="gallery-open" href={`${baseUrl}images/vb/2017—__VB-HUN6-rajtutan.jpg`} aria-label="Friss szélben: a 2017 Gold Cup képének megnyitása nagyban" aria-haspopup="dialog">
             <img class="gallery-photo" src={`${baseUrl}images/vb/2017—__VB-HUN6-rajtutan.jpg`} alt="HUN 6 és a nemzetközi Finn-mezőny rajt után a 2017-es Gold Cupon Balatonföldváron. Fotó: Robert Deaves." loading="lazy" width="1200" height="800" />
             <span class="gallery-photo-caption">2017 Gold Cup – Tuss vitorlával a friss szélben<small>Fotó: Robert Deaves</small></span>
+          </a> : index === 2 ? <a class="gallery-open" data-photos={JSON.stringify(startPhotos)} href={startPhotos[0].src} aria-label="A rajtvonalon: 3 képes galéria megnyitása" aria-haspopup="dialog">
+            <img class="gallery-photo" src={startPhotos[0].src} alt={startPhotos[0].caption} loading="lazy" />
+            <span class="gallery-photo-caption">A rajtvonalon<small>3 kép – kattints a megnyitáshoz</small></span>
           </a> : <><i class={`fa-solid ${icon}`}></i><span>{label}</span></>}
         </div>
       ))}
@@ -30,24 +38,56 @@ const baseUrl = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
     <img src={`${baseUrl}images/vb/2017—__VB-HUN6-rajtutan.jpg`} alt="HUN 6 a nemzetközi Finn-mezőnyben, a 2017-es Gold Cupon" width="1200" height="800" loading="lazy" />
     <figcaption id="gallery-viewer-caption">2017 Gold Cup – Tuss vitorlával a friss szélben<br />Fotó: Robert Deaves</figcaption>
   </figure>
+  <div class="viewer-navigation" hidden>
+    <button type="button" data-prev aria-label="Előző kép">← Előző</button>
+    <span data-counter role="status"></span>
+    <button type="button" data-next aria-label="Következő kép">Következő →</button>
+  </div>
 </dialog>
 
 <script>
   const viewer = document.querySelector<HTMLDialogElement>('#gallery-viewer');
-  const opener = document.querySelector<HTMLAnchorElement>('.gallery-open');
-  if (viewer && opener) {
-    opener.addEventListener('click', (event) => {
+  const openers = document.querySelectorAll<HTMLAnchorElement>('.gallery-open');
+  if (viewer) {
+    const image = viewer.querySelector('img')!;
+    const caption = viewer.querySelector('figcaption')!;
+    const navigation = viewer.querySelector<HTMLElement>('.viewer-navigation')!;
+    let photos: { src: string; caption: string }[] = [];
+    let index = 0;
+    let activeOpener: HTMLAnchorElement | null = null;
+    const show = () => {
+      image.src = photos[index].src;
+      image.alt = photos[index].caption;
+      caption.textContent = photos[index].caption;
+      navigation.hidden = photos.length < 2;
+      viewer.querySelector('[data-counter]')!.textContent = `${index + 1} / ${photos.length}`;
+    };
+    const step = (offset: number) => { index = (index + offset + photos.length) % photos.length; show(); };
+    openers.forEach((opener) => opener.addEventListener('click', (event) => {
       if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
       event.preventDefault();
+      activeOpener = opener;
+      photos = opener.dataset.photos ? JSON.parse(opener.dataset.photos) : [{ src: opener.href, caption: '2017 Gold Cup – Tuss vitorlával a friss szélben. Fotó: Robert Deaves' }];
+      index = 0;
+      show();
       viewer.showModal();
+    }));
+    viewer.querySelector('[data-prev]')?.addEventListener('click', () => step(-1));
+    viewer.querySelector('[data-next]')?.addEventListener('click', () => step(1));
+    viewer.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+        event.preventDefault(); step(event.key === 'ArrowLeft' ? -1 : 1);
+      }
     });
     viewer.querySelector('button')?.addEventListener('click', () => viewer.close());
     viewer.addEventListener('click', (event) => { if (event.target === viewer) viewer.close(); });
-    viewer.addEventListener('close', () => opener.focus());
+    viewer.addEventListener('close', () => activeOpener?.focus());
   }
 </script>
 
 <style>
+  .viewer-navigation:not([hidden]) { display:flex; justify-content:center; align-items:center; gap:1rem; padding-top:1rem; }
+  .viewer-navigation button { padding:.5rem .75rem; border:0; border-radius:4px; background:white; color:#092f43; }
   .gallery-open { position:absolute; inset:0; display:block; cursor:zoom-in; }
   .gallery-open:focus-visible { outline:3px solid white; outline-offset:-4px; }
   #gallery-viewer { width:min(1280px,96vw); max-width:96vw; max-height:94dvh; padding:1rem; border:0; border-radius:8px; background:#092f43; color:white; }
