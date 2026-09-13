@@ -1,4 +1,20 @@
 node_modules/
 dist/
+.DS_Store
+
+# A galériák nagy méretű eredeti fotói helyben maradnak.
+# A webre optimalizált változatok kerülnek verziókezelésbe.
+/public/images/*szelben/*
+!/public/images/*szelben/web/
+!/public/images/*szelben/web/**
+/public/images/*lben/*
+!/public/images/*lben/web/
+!/public/images/*lben/web/**
+/public/images/Rajtonalon/*
+!/public/images/Rajtonalon/web/
+!/public/images/Rajtonalon/web/**
+/public/images/dobogok/*
+!/public/images/dobogok/web/
+!/public/images/dobogok/web/**
 .astro/
 .DS_Store

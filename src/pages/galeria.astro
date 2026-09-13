@@ -1,0 +1,139 @@
+---
+import fs from 'node:fs';
+import path from 'node:path';
+import MainLayout from '../layouts/MainLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const baseUrl = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
+const imagesRoot = path.join(process.cwd(), 'public', 'images');
+const normalize = (value: string) => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+const folders = fs.readdirSync(imagesRoot, { withFileTypes: true }).filter((entry) => entry.isDirectory());
+const folderFor = (key: string) => folders.find((entry) => normalize(entry.name).replace(/\s+/g, '') === key)?.name;
+const supported = /\.(jpe?g|png|webp|gif)$/i;
+const assetUrl = (relativePath: string) => `${baseUrl}images/${relativePath.split('/').map(encodeURIComponent).join('/')}`;
+
+const definitions = [
+  { id: 'boszelben', title: 'Bőszélben', folder: folderFor('boszelben') },
+  { id: 'friss-szelben', title: 'Friss szélben', folder: folderFor('frissszelben') },
+  { id: 'rajtvonalon', title: 'A rajtvonalon', folder: folderFor('rajtonalon') },
+  { id: 'dobogok', title: 'Dobogós pillanatok', folder: folderFor('dobogok') },
+];
+const yearOverrides = new Map([
+  ['dobogok/2024-11-16 12-07-54.JPG', '2015'],
+  ['dobogok/IMG_8461.JPG', '2013'],
+]);
+// Ezeknél az eredeti fájloknál nincs beágyazott készítési dátum;
+// a fájlnév dátuma exportálási vagy másolási időpont lehet.
+const uncertainDate = /^(2019-12-(19|21)|2023-(06-26|07-16)|2024-(07-20|11-16))/;
+
+const categories = definitions.map((definition) => {
+  if (!definition.folder) return { ...definition, years: [] };
+  const folderPath = path.join(imagesRoot, definition.folder);
+  const rootFiles = fs.readdirSync(folderPath, { withFileTypes: true })
+    .filter((entry) => entry.isFile() && supported.test(entry.name))
+    .map((entry) => ({ file: entry.name, relative: `${definition.folder}/${entry.name}` }));
+  const webPath = path.join(folderPath, 'web');
+  const webFiles = fs.existsSync(webPath)
+    ? fs.readdirSync(webPath, { withFileTypes: true })
+      .filter((entry) => entry.isFile() && supported.test(entry.name))
+      .map((entry) => ({ file: entry.name, relative: `${definition.folder}/web/${entry.name}` }))
+    : [];
+  const grouped = new Map<string, { file: string; relative: string }[]>();
+  (webFiles.length > 0 ? webFiles : rootFiles).forEach((photo) => {
+    const override = yearOverrides.get(`${definition.id}/${photo.file}`);
+    const year = override ?? (uncertainDate.test(photo.file)
+      ? 'Ismeretlen év'
+      : photo.file.match(/^((?:19|20)\d{2})[-_]/)?.[1] ?? 'Ismeretlen év');
+    grouped.set(year, [...(grouped.get(year) ?? []), photo]);
+  });
+  const years = [...grouped.entries()]
+    .sort(([a], [b]) => {
+      if (a === 'Ismeretlen év') return 1;
+      if (b === 'Ismeretlen év') return -1;
+      return Number(b) - Number(a);
+    })
+    .map(([year, photos]) => ({ year, photos: photos.sort((a, b) => a.file.localeCompare(b.file, 'hu')) }));
+  return { ...definition, years };
+});
+const photoCount = categories.reduce((total, category) => total + category.years.reduce((sum, year) => sum + year.photos.length, 0), 0);
+---
+
+<MainLayout title="Galéria | FinnClass.hu" description="Finn vitorlás fotók évszám és témakör szerint rendezve.">
+  <Navbar />
+  <main>
+    <header class="archive-header">
+      <div class="container py-5">
+        <p class="eyebrow mb-2">Pillanatok a vízről</p>
+        <h1>Finn galéria</h1>
+        <p class="lead mb-0">{photoCount} fénykép témák és évszámok szerint rendezve.</p>
+      </div>
+    </header>
+    <nav class="gallery-category-nav py-3 sticky-top" aria-label="Galériakategóriák">
+      <div class="container d-flex flex-wrap gap-2">
+        {categories.map((category) => <a class="btn btn-sm btn-outline-primary" href={`#${category.id}`}>{category.title}</a>)}
+      </div>
+    </nav>
+    <div class="container section-space">
+      {categories.map((category) => (
+        <section class="gallery-category mb-5" id={category.id}>
+          <h2>{category.title}</h2>
+          {category.years.map((group, index) => (
+            <details class="gallery-year" open={index === 0}>
+              <summary><span>{group.year}</span><small>{group.photos.length} kép</small></summary>
+              <div class="photo-grid">
+                {group.photos.map((photo) => (
+                  <a href={assetUrl(photo.relative)} data-gallery-photo data-caption={`${category.title} – ${group.year}`}>
+                    <img src={assetUrl(photo.relative)} alt={`${category.title}, ${group.year}`} loading="lazy" decoding="async" />
+                  </a>
+                ))}
+              </div>
+            </details>
+          ))}
+        </section>
+      ))}
+    </div>
+  </main>
+  <Footer />
+  <dialog id="gallery-viewer" aria-labelledby="gallery-caption">
+    <button type="button" class="viewer-close" aria-label="Kép bezárása">Bezárás ×</button>
+    <figure><img src="" alt="" /><figcaption id="gallery-caption"></figcaption></figure>
+  </dialog>
+  <script>
+    const viewer = document.querySelector<HTMLDialogElement>('#gallery-viewer');
+    if (viewer) {
+      const image = viewer.querySelector('img')!;
+      const caption = viewer.querySelector('figcaption')!;
+      document.querySelectorAll<HTMLAnchorElement>('[data-gallery-photo]').forEach((link) => link.addEventListener('click', (event) => {
+        if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
+        image.src = link.href;
+        image.alt = link.querySelector('img')?.alt ?? '';
+        caption.textContent = link.dataset.caption ?? '';
+        viewer.showModal();
+      }));
+      viewer.querySelector('button')?.addEventListener('click', () => viewer.close());
+      viewer.addEventListener('click', (event) => { if (event.target === viewer) viewer.close(); });
+    }
+  </script>
+</MainLayout>
+
+<style>
+  .gallery-category-nav { top:78px; z-index:10; background:rgba(255,255,255,.96); border-bottom:1px solid #dce9ed; }
+  .gallery-category { scroll-margin-top:150px; }
+  .gallery-year { border-top:1px solid #dce9ed; padding:1rem 0; }
+  .gallery-year summary { cursor:pointer; display:flex; justify-content:space-between; align-items:center; color:var(--navy); font-size:1.25rem; font-weight:800; }
+  .gallery-year summary small { color:#738b96; font-size:.8rem; }
+  .photo-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:.75rem; padding-top:1rem; }
+  .photo-grid a { aspect-ratio:4/3; overflow:hidden; border-radius:4px; background:#eef5f6; }
+  .photo-grid img { width:100%; height:100%; object-fit:cover; transition:transform .2s ease; }
+  .photo-grid a:hover img { transform:scale(1.035); }
+  #gallery-viewer { width:min(1400px,96vw); max-width:96vw; max-height:94dvh; padding:1rem; border:0; border-radius:8px; background:#092f43; color:white; }
+  #gallery-viewer::backdrop { background:rgba(0,15,25,.88); }
+  #gallery-viewer figure { margin:0; text-align:center; }
+  #gallery-viewer img { display:block; width:100%; height:auto; max-height:78dvh; object-fit:contain; }
+  #gallery-viewer figcaption { padding-top:.75rem; }
+  .viewer-close { display:block; margin:0 0 .75rem auto; padding:.4rem .8rem; background:white; color:#092f43; border:0; border-radius:4px; }
+  @media (max-width:991.98px) { .photo-grid { grid-template-columns:repeat(3,1fr); } }
+  @media (max-width:575.98px) { .photo-grid { grid-template-columns:repeat(2,1fr); } }
+</style>
