@@ -22,6 +22,26 @@ const definitions = [
 const yearOverrides = new Map([
   ['dobogok/2024-11-16 12-07-54.JPG', '2015'],
   ['dobogok/IMG_8461.JPG', '2013'],
+  ['friss-szelben/photo_37478543746_37478543746.jpg', '2017'],
+]);
+const creditOverrides = new Map([
+  ['friss-szelben/photo_37478543746_37478543746.jpg', 'Fotó: Robert Deaves'],
+  ['friss-szelben/10360772_10153580124623972_6853350201160461390_n.jpg', 'Fotó: Cserta Gábor'],
+  ['friss-szelben/12047103_10153580124703972_6799936929269136195_n.jpg', 'Fotó: Cserta Gábor'],
+  ['friss-szelben/12049241_10153580124713972_1230966045909220390_n.jpg', 'Fotó: Cserta Gábor'],
+  ['boszelben/2024-11-16 13-51-32.JPG', 'Fotó: Cserta Gábor'],
+  ['dobogok/2024-11-16 12-07-54.JPG', 'Fotó: Szűcs Balázs'],
+  ['dobogok/2024-11-16 12-04-06.JPG', 'Fotó: weberfoto.hu'],
+  ['friss-szelben/2024-11-16 12-03-28.JPG', 'Forrásjelzés: Sirály.hu'],
+  ['friss-szelben/Misi_10626585_808439722509832_2469569269869628207_n (1).jpg', 'Forrásjelzés: Sirály.hu'],
+  ['friss-szelben/2024-11-16 12-03-58.JPG', 'Forrásjelzés: Sirály.hu'],
+  ['friss-szelben/2024-11-16 12-43-08[11].JPG', 'Forrásjelzés: Sirály.hu'],
+  ['friss-szelben/2024-11-16 12-43-10[2].JPG', 'Forrásjelzés: Sirály.hu'],
+  ['boszelben/2024-11-16 12-43-08[16].JPG', 'Forrásjelzés: Sirály.hu'],
+  ['boszelben/2024-11-16 12-43-08[5].JPG', 'Forrásjelzés: Sirály.hu'],
+  ['rajtvonalon/2024-11-16 12-04-02[2].JPG', 'Forrásjelzés: Sirály.hu'],
+  ['dobogok/2024-11-16 12-43-08[3].JPG', 'Forrásjelzés: Sirály.hu'],
+  ['dobogok/2024-11-16 12-44-04[10].JPG', 'Forrásjelzés: Sirály.hu'],
 ]);
 // Ezeknél az eredeti fájloknál nincs beágyazott készítési dátum;
 // a fájlnév dátuma exportálási vagy másolási időpont lehet.
@@ -53,7 +73,12 @@ const categories = definitions.map((definition) => {
       if (b === 'Ismeretlen év') return -1;
       return Number(b) - Number(a);
     })
-    .map(([year, photos]) => ({ year, photos: photos.sort((a, b) => a.file.localeCompare(b.file, 'hu')) }));
+    .map(([year, photos]) => ({
+      year,
+      photos: photos
+        .sort((a, b) => a.file.localeCompare(b.file, 'hu'))
+        .map((photo) => ({ ...photo, credit: creditOverrides.get(`${definition.id}/${photo.file}`) })),
+    }));
   return { ...definition, years };
 });
 const photoCount = categories.reduce((total, category) => total + category.years.reduce((sum, year) => sum + year.photos.length, 0), 0);
@@ -83,7 +108,7 @@ const photoCount = categories.reduce((total, category) => total + category.years
               <summary><span>{group.year}</span><small>{group.photos.length} kép</small></summary>
               <div class="photo-grid">
                 {group.photos.map((photo) => (
-                  <a href={assetUrl(photo.relative)} data-gallery-photo data-caption={`${category.title} – ${group.year}`}>
+                  <a href={assetUrl(photo.relative)} data-gallery-photo data-caption={`${category.title} – ${group.year}${photo.credit ? ` · ${photo.credit}` : ''}`}>
                     <img src={assetUrl(photo.relative)} alt={`${category.title}, ${group.year}`} loading="lazy" decoding="async" />
                   </a>
                 ))}
