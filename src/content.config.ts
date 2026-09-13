@@ -35,4 +35,12 @@ const sponsors = defineCollection({
   schema: z.object({ name: z.string(), icon: z.string().default('fa-handshake'), url: z.string().url().optional(), order: z.number().int().default(0) }),
 });
 
-export const collections = { news, races, results, sponsors };
+const reports = defineCollection({
+  loader: glob({ base: './src/content/reports', pattern: '**/*.md' }),
+  schema: z.object({
+    title: z.string(), date: z.coerce.date(), year: z.number().int(), location: z.string(),
+    excerpt: z.string(), author: z.string().optional(), draft: z.boolean().default(false),
+    images: z.array(z.object({ path: z.string(), alt: z.string(), caption: z.string().optional() })).default([]),
+  }),
+});
+export const collections = { news, races, results, sponsors, reports };

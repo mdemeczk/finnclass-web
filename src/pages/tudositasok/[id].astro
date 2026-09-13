@@ -1,0 +1,30 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import MainLayout from '../../layouts/MainLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+export async function getStaticPaths() {
+  return (await getCollection('reports', ({data}) => !data.draft)).map(report => ({params:{id:report.id}, props:{report}}));
+}
+interface Props { report: CollectionEntry<'reports'> }
+const {report} = Astro.props;
+const {Content} = await render(report);
+const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
+---
+<MainLayout title={`${report.data.title} | FinnClass.hu`} description={report.data.excerpt}>
+  <Navbar /><main>
+    <header class="article-header text-white"><div class="container py-5">
+      <a class="article-back" href={`${base}tudositasok/`}>Vissza a tudósításokhoz</a>
+      <p class="eyebrow mt-4">{report.data.location} · {report.data.year}</p>
+      <h1>{report.data.title}</h1>
+      <p><time datetime={report.data.date.toISOString()}>{report.data.date.toLocaleDateString('hu-HU')}</time>{report.data.author && ` · ${report.data.author}`}</p>
+    </div></header>
+    <article class="article-content container section-space"><div class="mx-auto">
+      <Content />
+      {report.data.images.map(image => <figure class="my-4">
+        <a href={`${base}${image.path.replace(/^\/+/, '')}`} target="_blank" rel="noopener noreferrer" aria-label={`${image.alt} – teljes méret`}><img class="article-image" src={`${base}${image.path.replace(/^\/+/, '')}`} alt={image.alt} loading="lazy" /></a>
+        {image.caption && <figcaption class="text-secondary mt-2">{image.caption}</figcaption>}
+      </figure>)}
+    </div></article>
+  </main><Footer />
+</MainLayout>
