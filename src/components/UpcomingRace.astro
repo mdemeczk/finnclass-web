@@ -36,7 +36,7 @@ const dayRange = (race: CollectionEntry<'races'>) => race.data.endDate
           {featuredRace.data.documents.length > 0 && <div class="mt-4">
             <h4 class="h6">Bajnoksági információk</h4>
             <div class="d-flex flex-column align-items-start gap-2">
-              {featuredRace.data.documents.map((doc) => <a class="btn btn-outline-light btn-sm" href={`${baseUrl}${doc.path}`} target="_blank" rel="noreferrer">{doc.label}</a>)}
+              {featuredRace.data.documents.map((doc) => <a class="btn btn-outline-light btn-sm" href={/^https?:\/\//i.test(doc.path) ? doc.path : `${baseUrl}${doc.path}`} target="_blank" rel="noreferrer">{doc.label}</a>)}
             </div>
           </div>}
         </div>
