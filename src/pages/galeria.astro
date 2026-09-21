@@ -105,10 +105,10 @@ const photoCount = categories.reduce((total, category) => total + category.years
           <h2>{category.title}</h2>
           {category.years.map((group, index) => (
             <details class="gallery-year" open={index === 0}>
-              <summary><span>{group.year}</span><small>{group.photos.length} kép</small></summary>
+              <summary><span>{group.year}{category.id === 'dobogok' && group.year === '2026' ? ' – Finn OB, Balatonföldvár' : ''}</span><small>{group.photos.length} kép</small></summary>
               <div class="photo-grid">
                 {group.photos.map((photo) => (
-                  <a href={assetUrl(photo.relative)} data-gallery-photo data-caption={`${category.title} – ${group.year}${photo.credit ? ` · ${photo.credit}` : ''}`}>
+                  <a href={assetUrl(photo.relative)} data-gallery-photo data-group={`${category.id}-${group.year}`} data-caption={`${category.title} – ${group.year}${photo.credit ? ` · ${photo.credit}` : ''}`}>
                     <img src={assetUrl(photo.relative)} alt={`${category.title}, ${group.year}`} loading="lazy" decoding="async" />
                   </a>
                 ))}
@@ -122,22 +122,41 @@ const photoCount = categories.reduce((total, category) => total + category.years
   <Footer />
   <dialog id="gallery-viewer" aria-labelledby="gallery-caption">
     <button type="button" class="viewer-close" aria-label="Kép bezárása">Bezárás ×</button>
-    <figure><img src="" alt="" /><figcaption id="gallery-caption"></figcaption></figure>
+    <figure><img src="" alt="" /><figcaption id="gallery-caption" aria-live="polite"></figcaption></figure>
+    <div class="viewer-controls"><button type="button" data-prev>← Előző</button><button type="button" data-next>Következő →</button></div>
   </dialog>
   <script>
     const viewer = document.querySelector<HTMLDialogElement>('#gallery-viewer');
     if (viewer) {
       const image = viewer.querySelector('img')!;
       const caption = viewer.querySelector('figcaption')!;
-      document.querySelectorAll<HTMLAnchorElement>('[data-gallery-photo]').forEach((link) => link.addEventListener('click', (event) => {
-        if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
-        event.preventDefault();
+      let photos: HTMLAnchorElement[] = [];
+      let current = 0;
+      const allPhotos = Array.from(document.querySelectorAll<HTMLAnchorElement>('[data-gallery-photo]'));
+      const show = (index: number) => {
+        if (!photos.length) return;
+        current = (index + photos.length) % photos.length;
+        const link = photos[current];
         image.src = link.href;
         image.alt = link.querySelector('img')?.alt ?? '';
-        caption.textContent = link.dataset.caption ?? '';
+        caption.textContent = `${link.dataset.caption ?? ''} · ${current + 1} / ${photos.length}`;
+      };
+      allPhotos.forEach((link) => link.addEventListener('click', (event) => {
+        if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
+        photos = allPhotos.filter((photo) => photo.dataset.group === link.dataset.group);
+        show(photos.indexOf(link));
         viewer.showModal();
       }));
-      viewer.querySelector('button')?.addEventListener('click', () => viewer.close());
+      viewer.querySelector('[data-prev]')?.addEventListener('click', () => show(current - 1));
+      viewer.querySelector('[data-next]')?.addEventListener('click', () => show(current + 1));
+      viewer.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+          event.preventDefault();
+          show(current + (event.key === 'ArrowLeft' ? -1 : 1));
+        }
+      });
+      viewer.querySelector('.viewer-close')?.addEventListener('click', () => viewer.close());
       viewer.addEventListener('click', (event) => { if (event.target === viewer) viewer.close(); });
     }
   </script>
@@ -158,6 +177,8 @@ const photoCount = categories.reduce((total, category) => total + category.years
   #gallery-viewer figure { margin:0; text-align:center; }
   #gallery-viewer img { display:block; width:100%; height:auto; max-height:78dvh; object-fit:contain; }
   #gallery-viewer figcaption { padding-top:.75rem; }
+  .viewer-controls { display:flex; justify-content:space-between; gap:1rem; margin-top:.75rem; }
+  .viewer-controls button { background:white; color:#092f43; border:0; border-radius:4px; padding:.5rem 1rem; }
   .viewer-close { display:block; margin:0 0 .75rem auto; padding:.4rem .8rem; background:white; color:#092f43; border:0; border-radius:4px; }
   @media (max-width:991.98px) { .photo-grid { grid-template-columns:repeat(3,1fr); } }
   @media (max-width:575.98px) { .photo-grid { grid-template-columns:repeat(2,1fr); } }
