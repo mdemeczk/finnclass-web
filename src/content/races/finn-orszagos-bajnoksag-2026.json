@@ -4,57 +4,15 @@
   "endDate": "2026-09-20",
   "location": "Balatonföldvár, Spartacus telep",
   "published": true,
-  "featured": true,
-  "noticeUrl": "documents/finn-ob-2026-versenykiiras.pdf",
+  "featured": false,
   "documents": [
-    { "label": "Kaiser Kristóf nyerte a földvári Finn dingi ob-t – Hunsail-beszámoló", "path": "https://hunsail.hu/cikkek/hirek/elsport/kaiser-kristof-nyerte-a-foldvari-finn-dingi-ob-t.html" },
-    { "label": "Végeredmény 10 futam után (PDF)", "path": "documents/FinnDinghyOB_R10__.pdf" },
-    { "label": "Földvári tippek és családi programok", "path": "hirek/2026-09-10-foldvari-bajnoksag-kedvcsinalo/" },
-    { "label": "Érkezési tájékoztató – magyar (PDF)", "path": "documents/finn-ob-2026-arrival-hu.pdf" },
-    { "label": "Arrival information – English (PDF)", "path": "documents/finn-ob-2026-arrival-en.pdf" }
-  ],
-  "information": {
-    "source": "Tájékoztatás: Kónya Balázs",
-    "sections": [
-      {
-        "title": "Parkolás",
-        "icon": "fa-square-parking",
-        "paragraphs": [
-          "Balatonföldváron a közterületi parkolás egész évben, mindennap 8:00 és 21:00 között díjköteles.",
-          "A II. zónában mobilparkolás esetén 5 óra után automatikusan 2700 Ft-os napidíj lép életbe. A kikötőhöz közeli II. zónás lehetőség a Bajcsy-Zsilinszky utcáról – a kikötői sorompóhoz vezető utcáról – nyíló Vak Bottyán utcai parkoló. Innen a klub körülbelül 500 méterre található. A mobilparkolás hívószáma: 763 8627.",
-          "A vasút és a tó közötti terület az I. zónához tartozik: itt magasabb az óradíj, és nincs napidíj.",
-          "A sorompón túl, kevéssel a személyhajó-megálló után, a bejáró túloldalán is található parkoló a régi VVEB-telep előtt, ez azonban hivatalosan a BAHART bérlőinek van fenntartva."
-        ]
-      },
-      {
-        "title": "Hajók szállítása",
-        "icon": "fa-truck-ramp-box",
-        "paragraphs": [
-          "A hajókat a verseny hetének hétfőjétől lehet a telepre vinni. Az azt megelőző héten Asso- és 11 méteres bajnokság zajlik; a résztvevő hajók egy részét a telepen tárolják, és csak a verseny utáni vasárnapon kerülnek vissza a helyükre. A Finn hajók fogadásához további átrendezésre is szükség van."
-        ]
-      },
-      {
-        "title": "Utánfutók",
-        "icon": "fa-trailer",
-        "paragraphs": [
-          "A klub területén korlátozott számban van hely az utánfutók számára. Mivel a verseny idején nincs rájuk szükség, aki meg tudja oldani, lehetőleg ne hagyja az utánfutót a telepen."
-        ]
-      },
-      {
-        "title": "Sólyák",
-        "icon": "fa-sailboat",
-        "paragraphs": [
-          "A kikötő nyugati részén két széles sólya található; a déli oldalinál előfordulhat, hogy kevés a vízmélység.",
-          "Új sólya található északnyugat felé, a régi klubház előtt. A kikötőmedencében, a daru mellett lévő régi sólya szintén használható, de meglehetősen meredek."
-        ]
-      },
-      {
-        "title": "Étkezés",
-        "icon": "fa-utensils",
-        "paragraphs": [
-          "A kikötőben büfé működik, ahol meleg ételek is kaphatók."
-        ]
-      }
-    ]
-  }
+    {
+      "label": "Végeredmény 10 futam után (PDF)",
+      "path": "documents/FinnDinghyOB_R10__.pdf"
+    },
+    {
+      "label": "Dobogós fényképek",
+      "path": "galeria/#dobogok"
+    }
+  ]
 }

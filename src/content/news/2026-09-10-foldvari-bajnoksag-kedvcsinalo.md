@@ -4,7 +4,7 @@ date: 2026-09-10
 excerpt: "Kónya Balázs kedvcsinálója a balatonföldvári bajnoksághoz: helyi szelek, kirándulások, családi programok, boltok és étkezési lehetőségek."
 icon: fa-sailboat
 featured: true
-draft: false
+draft: true
 ---
 
 **Kónya Balázs tájékoztatója a földvári bajnokságra készülőknek.**
