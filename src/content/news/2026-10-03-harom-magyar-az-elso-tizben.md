@@ -1,25 +1,27 @@
 ---
 title: "Három magyar az első tízben az International Finn Cupon"
-date: 2026-10-03T15:54:00+02:00
-excerpt: "Három futam után Kaiser Kristóf a második, Kántor Zsigmond az ötödik, Gerencsér Gergely a tizedik helyen áll a 97 fős malcesinei mezőnyben."
+date: 2026-10-03T17:23:00+02:00
+excerpt: "Négy futam után Pallay Tibor a negyedik, Kaiser Kristóf az ötödik, Kántor Zsigmond a kilencedik helyen áll a 97 fős malcesinei mezőnyben."
 icon: fa-trophy
 featured: true
 draft: false
 ---
 
-**Három magyar versenyző szerepel az első tízben az International Finn Cup 2026 – Trofeo A. Menoni, 5th Italia Cup három futam utáni összesítésében.** A Malcesinében, október 2–4. között zajló verseny hivatalos eredménylistáján 97 induló szerepel.
+**Négy futam után is három magyar versenyző szerepel az első tízben az International Finn Cup 2026 – Trofeo A. Menoni, 5th Italia Cup összesítésében.** A Malcesinében, október 2–4. között zajló verseny hivatalos eredménylistáján 97 induló szerepel.
 
-Kaiser Kristóf a második helyen áll 20 ponttal, Kántor Zsigmond 33 ponttal az ötödik, Gerencsér Gergely pedig 67 ponttal a tizedik.
+Pallay Tibor a negyedik futamban másodikként ért célba, és az egy kiejtővel számolt összesítésben 16 ponttal a negyedik helyen áll. Kaiser Kristóf 17 ponttal az ötödik, Kántor Zsigmond 26 ponttal a kilencedik.
 
-| Helyezés | Versenyző | Vitorlaszám | 1. futam | 2. futam | 3. futam | Pont |
-| --- | --- | --- | --- | --- | --- | --- |
-| 2. | Kaiser Kristóf | HUN 808 | 6 | 5 | 9 | 20 |
-| 5. | Kántor Zsigmond | HUN 30 | 15 | 3 | 15 | 33 |
-| 10. | Gerencsér Gergely | HUN 180 | 21 | 38 | 8 | 67 |
+| Helyezés | Versenyző | Vitorlaszám | 1. futam | 2. futam | 3. futam | 4. futam | Nettó pont |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 4. | Pallay Tibor | HUN 5 | 7 | 7 | (98 BFD) | 2 | 16 |
+| 5. | Kaiser Kristóf | HUN 808 | 6 | 5 | (9) | 6 | 17 |
+| 9. | Kántor Zsigmond | HUN 30 | (15) | 3 | 15 | 8 | 26 |
 
-Az élen Deniss Karpak áll 4 ponttal. Kaiser mögött a holland Martijn van Muyden következik 27 ponttal a harmadik helyen.
+*A zárójelben szereplő futameredmény a kiejtett eredmény.*
 
-*A hír a 2026. október 3-án 15:54-kor közzétett, három futam utáni állást mutatja, nem végeredményt. A futameredményeket a friss hivatalos lista alapján közöljük.*
+Gerencsér Gergely 40 ponttal a 12. helyen áll. Az élen Deniss Karpak vezet 4 ponttal, Laurent Hay és Alessandro Marega egyaránt 8 ponttal követi.
+
+*Frissítve a 2026. október 3-án 17:23-kor közzétett, négy futam utáni állás alapján. Ez még nem végeredmény; a korábbi háromfutamos hírt a friss adatokkal váltottuk fel.*
 
 A teljes PDF a címlap **Eredmények → Nemzetközi versenyek** részében érhető el.
 
