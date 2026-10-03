@@ -1,26 +1,34 @@
 ---
-title: "Szerb Finn-bajnokság: Sipos Péter a harmadik helyen három futam után"
+title: "Szerb Finn-bajnokság: Sipos Péter harmadik öt futam után"
 date: 2026-10-03
-excerpt: "A megosztott háromfutamos eredménylista alapján Sipos Péter a harmadik, Stadler Csaba a nyolcadik, Nagy Zoltán a tizedik helyen áll a 11 fős mezőnyben."
+excerpt: "Öt futam és egy kiejtő után Sipos Péter a harmadik, Stadler Csaba a hetedik, Nagy Zoltán a tizedik helyen áll a 11 fős mezőnyben."
 icon: fa-sailboat
 featured: true
 draft: false
 ---
 
-**Három futam után Sipos Péter a harmadik helyen áll a szerb Finn-bajnokságon.** Stadler Csaba Finnclass.hu Facebook-csoportban megosztott eredménylistáján 11 versenyző szerepel; mindhárom futam beleszámít az összesítésbe, kiejtő nélkül.
+**Öt futam után Sipos Péter továbbra is a harmadik helyen áll a szerb Finn-bajnokságon.** A frissen megosztott eredménylistán 11 versenyző szerepel; egy kiejtő után négy futam eredménye számít az összesítésbe.
 
-Az élen Tihomir Zakić és Zlatko Atanasov egyaránt 6 ponttal áll, a táblázat Zakićot sorolja az első helyre. Sipos Péter egy futamgyőzelemmel, egy harmadik és egy ötödik hellyel 9 pontot gyűjtött.
+Az élen Zlatko Atanasov áll 5 ponttal, Tihomir Zakić 8 ponttal a második. Sipos Péter a negyedik futamban harmadik, az ötödikben második lett, így nettó 9 ponttal őrzi harmadik helyét.
 
-### Magyar versenyzők a megosztott eredménylistán
+### HUN jelzéssel szereplő versenyzők
 
-| Helyezés | Versenyző | Klub | 1. futam | 2. futam | 3. futam | Pont |
-| --- | --- | --- | --- | --- | --- | --- |
-| 3. | Sipos Péter | ARSC | 1 | 3 | 5 | 9 |
-| 8. | Stadler Csaba | Atomerőmű SE | DNC | DNC | 2 | 26 |
-| 10. | Nagy Zoltán | ARSC | 9 | 8 | 10 | 27 |
+| Helyezés | Versenyző | Klub | Nettó pont |
+| --- | --- | --- | --- |
+| 3. | Sipos Péter | ARSC | 9 |
+| 7. | Stadler Csaba | Atomerőmű SE | 29 |
+| 8. | Zlatko Šabotić | Cool&Fun | 31 |
+| 9. | Đorđe Poznić | Šarlo | 31 |
+| 10. | Nagy Zoltán | ARSC | 34 |
 
-Stadler Csaba az első két futamban DNC jelölést kapott, a harmadikban viszont másodikként ért célba.
+Stadler Csaba az ötödik futamban harmadikként ért célba, és az összesítésben a hetedik helyre lépett előre. Nagy Zoltán az ötödik futamban nyolcadik lett, összesítésben a tizedik helyen áll.
 
-*A közölt adatok három futam utáni állást mutatnak, nem végeredményt.*
+### Teljes eredménytábla
 
-Forrás: [Stadler Csaba eredményközlése a Finnclass.hu Facebook-csoportban](https://www.facebook.com/groups/finnclass.hu/posts/2803120593407416/), illetve a [megosztott eredménytábla](https://www.facebook.com/photo/?fbid=3280254908833473&set=pcb.2803120606740748).
+Az alábbi képre kattintva az eredménytábla nagyban is megnyitható.
+
+<a href="../../images/news/szerb-finn-bajnoksag-2026-5-futam.jpg" target="_blank" rel="noopener noreferrer"><img src="../../images/news/szerb-finn-bajnoksag-2026-5-futam.jpg" alt="Szerb Finn-bajnokság: öt futam utáni eredménylista, egy kiejtővel" loading="lazy" style="max-width:100%;height:auto" /></a>
+
+*A közölt adatok öt futam utáni állást mutatnak, nem végeredményt. A zárójelbe tett futameredmények a kiejtett eredmények. A korábbi háromfutamos hírt a friss táblázat alapján aktualizáltuk.*
+
+Forrás: [a Facebookon megosztott eredménytábla](https://www.facebook.com/photo/?fbid=3281197205405910).
