@@ -1,13 +1,13 @@
 ---
-title: "Szerb Finn-bajnokság: Sipi helyszíni beszámolója és végeredmény"
+title: "Forgolódó szél és szerb vendégszeretet – Sipi beszámolója a szerb bajnokságról"
 date: 2026-10-05
-excerpt: "Forgolódó szél, futamgyőzelem és szerb vendégszeretet: Sipi helyszíni beszámolója, valamint az öt futam alapján kialakult végeredmény."
-icon: fa-sailboat
-featured: true
+year: 2026
+location: "Szerbia"
+excerpt: "Változékony szél, taktikai fordulatok és bőséges vendéglátás: Sipos Péter, Sipi élményei a szerb bajnokságról."
+author: "Sipos Péter (Sipi) beszámolója alapján"
 draft: false
+images: []
 ---
-
-## Forgolódó szél és szerb vendégszeretet – Sipi beszámolója a szerb bajnokságról
 
 Kellemes idő, változékony szél és látványos taktikai fordulatok fogadták a szerb bajnokság résztvevőit. Sipi beszámolójából olyan verseny képe rajzolódik ki, amelyen a jó rajt és a hajósebesség mellett a szélfordulók felismerése és a megfelelő oldal kiválasztása döntött. A vízen szoros csaták, a parton bőséges vendéglátás tette emlékezetessé a hétvégét.
 
@@ -29,33 +29,4 @@ Az utazásról szintén kedvező tapasztalatok maradtak. A Horvátországon át 
 
 A szerb bajnokság így a futamgyőzelem mellett taktikai tanulságokat és kellemes emlékeket is adott: figyelmet követelő szelet, gyönyörű környezetet és olyan vendéglátást, amelyre a verseny után is jó visszagondolni.
 
-[Olvasd a Helyszíni tudósítások között is](../../tudositasok/2026-szerb-bajnoksag-sipi/).
-
-## Végeredmény öt futam után
-
-
-**Sipos Péter a harmadik helyen végzett a szerb Finn-bajnokságon.** A 11 fős mezőny öt futamot teljesített; egy kiejtő után négy futam eredménye adta a végeredményt.
-
-Zlatko Atanasov nyert 5 ponttal, Tihomir Zakić 8 ponttal második lett. Sipos Péter a negyedik futamban harmadik, az ötödikben második lett, így nettó 9 ponttal zárt a harmadik helyen.
-
-### HUN jelzéssel szereplő versenyzők
-
-| Helyezés | Versenyző | Klub | Nettó pont |
-| --- | --- | --- | --- |
-| 3. | Sipos Péter | ARSC | 9 |
-| 7. | Stadler Csaba | Atomerőmű SE | 29 |
-| 8. | Zlatko Šabotić | Cool&Fun | 31 |
-| 9. | Đorđe Poznić | Šarlo | 31 |
-| 10. | Nagy Zoltán | ARSC | 34 |
-
-Stadler Csaba az ötödik futamban harmadikként ért célba, és az összesítésben a hetedik helyre lépett előre. Nagy Zoltán az ötödik futamban nyolcadik lett, összesítésben a tizedik helyen végzett.
-
-### Teljes eredménytábla
-
-Az alábbi képre kattintva az eredménytábla nagyban is megnyitható.
-
-<a href="../../images/news/szerb-finn-bajnoksag-2026-5-futam.jpg" target="_blank" rel="noopener noreferrer"><img src="../../images/news/szerb-finn-bajnoksag-2026-5-futam.jpg" alt="Szerb Finn-bajnokság: végeredmény öt futam után, egy kiejtővel" loading="lazy" style="max-width:100%;height:auto" /></a>
-
-*Az öt futam utáni eredménylista egyben a bajnokság végeredménye. A zárójelbe tett futameredmények a kiejtett eredmények. A korábbi részeredményeket a végeredménnyel frissítettük.*
-
-Forrás: [a Facebookon megosztott eredménytábla](https://www.facebook.com/photo/?fbid=3281197205405910).
+[Kapcsolódó hír és a bajnokság végeredménye](../../hirek/2026-10-03-szerb-bajnoksag/).
