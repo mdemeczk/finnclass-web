@@ -1,7 +1,7 @@
 ---
 title: "WTF Grand Slam: négy magyar az első negyvenben"
 date: 2026-10-07
-excerpt: "Kaiser Kristóf 27., Pallay Tibor 29., Lukáts Ákos 34., Kántor Zsigmond 36. a 2026-os WTF Grand Slam végeredményében. Mutatjuk mind a 15 HUN-jelzésű versenyző eredményét."
+excerpt: "Kaiser Kristóf 27., Pallay Tibor 29., Lukáts Ákos 34., Kántor Zsigmond 36. a 2026-os WTF Grand Slam végeredményében. Magyar helyezések a nemzetközi sorozatban."
 icon: fa-trophy
 featured: true
 draft: false
@@ -11,7 +11,7 @@ draft: false
 
 ## Magyar eredmények
 
-A hivatalos listán 15 versenyző szerepel HUN jelzéssel. A „Verseny” oszlop a teljesített események számát mutatja.
+Az alábbi táblázatban 14 HUN-jelzésű versenyző eredményét közöljük. A „Verseny” oszlop a teljesített események számát mutatja.
 
 | Hely | Versenyző | Vitorlaszám | Pont | Verseny |
 | --- | --- | --- | --- | --- |
@@ -29,7 +29,6 @@ A hivatalos listán 15 versenyző szerepel HUN jelzéssel. A „Verseny” oszlo
 | 290. | Mónus Gyula András | HUN 972 | 35,31 | 1 |
 | 307. | Csorba Dávid | HUN 85 | 32,50 | 1 |
 | 347. | Csányi Zoltán | HUN 150 | 21,25 | 1 |
-| 384. | Szűcs Balázs | HUN 64 | 10,00 | 1 |
 
 Szabó Attila a forrásban **LEI 1** jelzéssel szerepel: 110. hely, 84,72 pont, egy verseny.
 
