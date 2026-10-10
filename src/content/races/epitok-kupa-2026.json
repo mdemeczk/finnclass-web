@@ -5,5 +5,11 @@
   "location": "Tihany, Tihanyi Hajós Egylet, Kenderföld utca 19.",
   "published": true,
   "featured": true,
-  "noticeUrl": "documents/epitok-kupa-2026-versenykiiras.pdf"
+  "noticeUrl": "documents/epitok-kupa-2026-versenykiiras.pdf",
+  "documents": [
+    {
+      "label": "Finn eredmények egy futam után (PDF)",
+      "path": "documents/epitok-kupa-2026-1-futam.pdf"
+    }
+  ]
 }
