@@ -2,6 +2,7 @@
 const baseUrl = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
 const galleryUrl = `${baseUrl}galeria/`;
 const categories = [
+  { id: 'arcok', title: 'Arcok', image: '' },
   { id: 'boszelben', title: 'Bőszélben', image: 'images/bőszélben/web/2024-11-16 13-51-32.JPG' },
   { id: 'friss-szelben', title: 'Friss szélben', image: 'images/vb/2017—__VB-HUN6-rajtutan.jpg' },
   { id: 'rajtvonalon', title: 'A rajtvonalon', image: 'images/Rajtonalon/web/P1010019.JPG' },
@@ -19,7 +20,7 @@ const assetUrl = (path: string) => `${baseUrl}${path.split('/').map(encodeURICom
     <div class="gallery-grid">
       {categories.map((category, index) => (
         <a class:list={['gallery-item', `gallery-${index + 1}`]} href={`${galleryUrl}#${category.id}`}>
-          <img class="gallery-photo" src={assetUrl(category.image)} alt={category.title} loading="lazy" />
+          {category.image ? <img class="gallery-photo" src={assetUrl(category.image)} alt={category.title} loading="lazy" /> : <i class="fa-solid fa-users" aria-hidden="true"></i>}
           <span class="gallery-photo-caption">{category.title}<small>Képek megtekintése</small></span>
         </a>
       ))}

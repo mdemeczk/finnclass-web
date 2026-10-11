@@ -14,10 +14,12 @@ const supported = /\.(jpe?g|png|webp|gif)$/i;
 const assetUrl = (relativePath: string) => `${baseUrl}images/${relativePath.split('/').map(encodeURIComponent).join('/')}`;
 
 const definitions = [
+  { id: 'arcok', title: 'Arcok', folder: folderFor('arcok') },
   { id: 'boszelben', title: 'Bőszélben', folder: folderFor('boszelben') },
   { id: 'friss-szelben', title: 'Friss szélben', folder: folderFor('frissszelben') },
   { id: 'rajtvonalon', title: 'A rajtvonalon', folder: folderFor('rajtonalon') },
   { id: 'dobogok', title: 'Dobogós pillanatok', folder: folderFor('dobogok') },
+  { id: 'epitok-kupa-2026', title: 'Dobogós pillanatok – Építők Kupa 2026', folder: folderFor('epitok-kupa-2026') },
 ];
 const yearOverrides = new Map([
   ['dobogok/2024-11-16 12-07-54.JPG', '2015'],
@@ -103,6 +105,7 @@ const photoCount = categories.reduce((total, category) => total + category.years
       {categories.map((category) => (
         <section class="gallery-category mb-5" id={category.id}>
           <h2>{category.title}</h2>
+          {category.years.length === 0 && <p class="text-secondary">Hamarosan képekkel bővül.</p>}
           {category.years.map((group, index) => (
             <details class="gallery-year" open={index === 0}>
               <summary><span>{group.year}{category.id === 'dobogok' && group.year === '2026' ? ' – Finn OB, Balatonföldvár' : ''}</span><small>{group.photos.length} kép</small></summary>
