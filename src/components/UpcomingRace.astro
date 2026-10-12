@@ -44,6 +44,7 @@ const dayRange = (race: CollectionEntry<'races'>) => race.data.endDate
       <div class="col-lg-7">
         <div class="calendar-panel">
           <div class="d-flex justify-content-between align-items-center mb-4"><h3 class="mb-0">2026-os versenynaptár</h3><i class="fa-regular fa-calendar-days fs-3"></i></div>
+          <a class="btn btn-primary mb-4" href={`${baseUrl}documents/finn-versenynaptar-2026.pdf`} target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-file-pdf me-2"></i>Teljes 2026-os versenynaptár (PDF)</a>
           {races.map((race) => (
             <div class="calendar-row">
               <div class="date-box"><small>{monthFormatter.format(race.data.startDate).replace('.', '').toUpperCase()}</small><strong>{dayRange(race)}</strong></div>
