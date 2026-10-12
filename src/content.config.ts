@@ -10,6 +10,7 @@ const races = defineCollection({
   schema: z.object({
     name: z.string(),
     startDate: z.coerce.date(),
+    startTime: z.string().optional(),
     endDate: z.coerce.date().optional(),
     location: z.string(),
     published: z.boolean().default(true),
