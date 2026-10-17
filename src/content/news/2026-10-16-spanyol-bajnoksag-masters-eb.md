@@ -1,11 +1,27 @@
 ---
-title: "Mar Menor: hat futam az EB előversenyén, nyolc magyar nevező a Masters EB-n"
-date: 2026-10-16
-excerpt: "Valérian Lebrun vezet a spanyol Finn-bajnokságon hat futam után. A Mar Menoron közben kezdődik a Masters EB programja, a nevezési listán nyolc magyar vitorlázóval."
+title: "Masters EB: viharriasztás és vitorlázási tilalom Mar Menoron"
+date: 2026-10-17
+excerpt: "Az október 17-én kapott helyszíni közlemény narancssárga viharriasztásról és teljes vitorlázási tilalomról tájékoztat. Fontos tudnivalók a felszerelésekről, parkolásról és segítségkérésről."
 icon: fa-sailboat
 featured: true
 draft: false
 ---
+
+## Október 17-i frissítés: viharriasztás, tilos vízre szállni
+
+**A finnclass.hu-hoz eljuttatott helyszíni közlemény szerint narancssárga viharriasztás van érvényben a térségben. A helyi sporteseményeket betiltották; a villámveszély miatt minden vitorlázás tilos.**
+
+A kapott tájékoztatás magyar összefoglalója:
+
+- **A felszereléseket helyezzétek biztonságba, és ne hagyjátok a talajon vagy a padlón.**
+- A CAR központot általában nem önti el a víz, az óváros környékén azonban előfordulhat elöntés. Az autókat a közlemény szerint **a Repsol benzinkút közelében, magasabban fekvő területen** célszerű leparkolni. A biztonságos parkoló pontos helyét később küldik meg; a kapott üzenet még nem tartalmazott térképpontot.
+- **Ha víz áll az utcán, ne induljatok el.** A felhőszakadások rövidek, de nagyon intenzívek lehetnek.
+- **Segélyhívó: [112](tel:112).**
+- Helyszíni segítségért **Maria** kereshető a **[+34 638 844 290](tel:+34638844290)** telefonszámon.
+
+*A fenti információ az október 17-én a finnclass.hu-hoz eljuttatott angol nyelvű helyszíni üzeneten alapul. Az üzenet nem jelölt meg időpontot a tilalom feloldására. A további teendőkről és a vízre szállás lehetőségéről a helyszíni szervezők aktuális tájékoztatása az irányadó.*
+
+## Korábbi hírek – október 16.
 
 **Már zajlik a ráhangolódás a Masters Európa-bajnokságra a Mar Menoron:** a spanyol Finn-bajnokság nemzetközi mezőnye hat futamon van túl. Az október 14–17-i verseny az EB előversenyeként lehetőséget ad a helyszín megismerésére és a versenytempó felvételére.
 
