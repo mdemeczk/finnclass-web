@@ -7,6 +7,8 @@ featured: true
 draft: false
 ---
 
+**Október 19-i fejlemény:** megjelent az EB első futamának eredménye. [Három magyar az első tízben – eredmények és beszámoló](../2026-10-19-masters-eb-elso-futam/). Az alábbi viharriasztási közlemény az október 17-i helyzetet dokumentálja, nem aktuális időjárási tájékoztató.
+
 ## Október 17-i frissítés: viharriasztás, tilos vízre szállni
 
 **A finnclass.hu-hoz eljuttatott helyszíni közlemény szerint narancssárga viharriasztás van érvényben a térségben. A helyi sporteseményeket betiltották; a villámveszély miatt minden vitorlázás tilos.**
