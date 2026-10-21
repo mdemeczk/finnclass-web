@@ -41,6 +41,6 @@ Az összetett negyedik helyét **Csányi Zoltán** szerezte meg 104 ponttal, az 
 - **Grand Grand Master:** Székely Antal
 - **Grand Master:** Stadler Csaba
 
-[A 2026-os 5 Tó sorozat teljes végeredménye letölthető innen](../../documents/5-to-2026-vegeredmeny.ods).
+[A 2026-os 5 Tó sorozat teljes végeredménye PDF-ben letölthető innen](../../documents/5-to-2026-vegeredmeny.pdf).
 
 Gratulálunk minden résztvevőnek és a kategóriák dobogósainak!
