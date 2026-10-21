@@ -1,47 +1,47 @@
 ---
-title: "Masters EB: két magyar az első tizenötben három futam után"
-date: 2026-10-20T18:31:00+02:00
-excerpt: "Gerencsér Gergely a 12., Pallay Tibor a 13. helyen áll a 119 hajós mezőnyben. Három futam után a portugál Filipe Silva vezet."
+title: "Masters EB: Pallay Tibor futamgyőzelemmel a hetedik"
+date: 2026-10-21T14:30:55+02:00
+excerpt: "Pallay Tibor megnyerte a negyedik futamot, és feljött a hetedik helyre; Gerencsér Gergely a nyolcadik a 117 hajós mezőnyben."
 icon: fa-trophy
 featured: true
 draft: false
 ---
 
-**Három futamot követően két magyar versenyző áll az első tizenötben a 119 hajós Finn Masters Európa-bajnokságon: Gerencsér Gergely a 12., Pallay Tibor pedig a 13. helyen várja a folytatást.**
+**Nagyszerű magyar eredmény a Finn Masters Európa-bajnokság negyedik futamában: Pallay Tibor futamgyőzelmet szerzett, és feljött az összetett hetedik helyére. Gerencsér Gergely a nyolcadik, így két magyar versenyző is az első tízben áll.**
 
-A Mar Menoron rendezett bajnokságot a portugál **Filipe Silva** vezeti 18 ponttal. A második a francia **Laurent Hay** 23, a harmadik a brit **Nick Craig** 24 ponttal.
+A Mar Menoron rendezett, 117 hajós bajnokságot négy futam után továbbra is a portugál **Filipe Silva** vezeti 25 ponttal. A második a francia **Valerian Lebrun** 28, a harmadik honfitársa, **Laurent Hay** 35 ponttal.
 
-## Magyar versenyzők – három futam után
+## Magyar versenyzők – négy futam után
 
 | Helyezés | Versenyző | Vitorlaszám | Pont |
 | --- | --- | --- | --- |
-| 12. | Gerencsér Gergely | HUN 180 | 53 |
-| 13. | Pallay Tibor | HUN 5 | 61 |
-| 23. | Kántor Zsigmond | HUN 30 | 79 |
-| 24. | Lukáts Ákos | HUN 50 | 84 |
-| 34. | Huszár Géza | HUN 1 | 111 |
-| 81. | Rutai István | HUN 51 | 228 |
-| 82. | Csorba Dávid | HUN 85 | 228 |
-| 93. | Horváth Zoltán | HUN 33 | 255 |
+| 7. | Pallay Tibor | HUN 5 | 62 |
+| 8. | Gerencsér Gergely | HUN 180 | 64 |
+| 19. | Lukáts Ákos | HUN 50 | 94 |
+| 24. | Kántor Zsigmond | HUN 30 | 108 |
+| 38. | Huszár Géza | HUN 1 | 176 |
+| 74. | Csorba Dávid | HUN 85 | 286 |
+| 81. | Rutai István | HUN 51 | 308 |
+| 104. | Horváth Zoltán | HUN 33 | 373 |
 
 ## Az élmezőny
 
 | Helyezés | Versenyző | Ország | Pont |
 | --- | --- | --- | --- |
-| 1. | Filipe Silva | Portugália | 18 |
-| 2. | Laurent Hay | Franciaország | 23 |
-| 3. | Nick Craig | Nagy-Britannia | 24 |
-| 4. | Valerian Lebrun | Franciaország | 26 |
-| 5. | David Terol Albaladejo | Spanyolország | 27 |
-| 6. | Christoph Burger | Svájc | 27 |
-| 7. | Sebbe Godefroid | Belgium | 35 |
-| 8. | Peter Peet | Hollandia | 37 |
-| 9. | Miguel Fernández Vasco | Spanyolország | 41 |
-| 10. | Marko Kolic | Olaszország | 44 |
+| 1. | Filipe Silva | Portugália | 25 |
+| 2. | Valerian Lebrun | Franciaország | 28 |
+| 3. | Laurent Hay | Franciaország | 35 |
+| 4. | Nick Craig | Nagy-Britannia | 37 |
+| 5. | Peter Peet | Hollandia | 43 |
+| 6. | Miguel Fernández Vasco | Spanyolország | 46 |
+| 7. | Pallay Tibor | Magyarország | 62 |
+| 8. | Gerencsér Gergely | Magyarország | 64 |
+| 9. | David Terol Albaladejo | Spanyolország | 65 |
+| 10. | Christoph Burger | Svájc | 66 |
 
 **Hajrá, magyar finnesek!**
 
-*A háromfutamos állás a hivatalos eredménylista 2026. október 20-i, 18:31-es frissítése alapján készült. Ez részeredmény, nem végeredmény.*
+*A négyfutamos állás a hivatalos eredménylista 2026. október 21-i, 14:30:55-ös frissítése alapján készült. Ez részeredmény, nem végeredmény.*
 
 [Teljes, frissülő hivatalos eredménylista – Finn Masters EB](https://fvrm.sailti.com/en/default/races/race-resultsall?text=2026FinnEuropeanMasters-es)
 
