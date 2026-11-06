@@ -9,6 +9,8 @@ draft: false
 
 **TERVEZET – NEM VÉGLEGES**
 
+A 2027-es nyílt Finn Európa-bajnokságot a spanyolországi L’Estartitban, a Costa Braván rendezik.
+
 Elkészült a **2027. évi Finn versenynaptár előzetes változata**. A tervezet 22 versenyt tartalmaz áprilistól októberig.
 
 [2027-es Finn versenynaptár – tervezet letöltése (PDF)](../../documents/finn-versenynaptar-2027-tervezet.pdf)
