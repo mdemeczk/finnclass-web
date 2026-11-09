@@ -1,7 +1,7 @@
 ---
 title: "Valérian Lebrun először világelső – három magyar versenygyőzelem az új Finn-ranglistában"
 date: 2026-11-09
-excerpt: "Valérian Lebrun vezeti a novemberi Finn-világranglistát. Kaiser Kristóf 13., Pallay Tibor 14.; Kaiser két és Németh Domonkos egy versenygyőzelme is bekerült a frissítésbe."
+excerpt: "Valérian Lebrun vezeti a novemberi Finn-világranglistát. Kaiser Kristóf 13., Pallay Tibor 14., Lukáts Ákos 18.; Kaiser két és Németh Domonkos egy versenygyőzelme is bekerült a frissítésbe."
 image: images/news/2026-11-finn-vilagranglista.svg
 imageAlt: "A 2026. novemberi Finn-világranglista első három helyezettje: Valérian Lebrun, Peter Peet és Laurent Hay."
 icon: fa-trophy
@@ -11,7 +11,7 @@ draft: false
 
 *Saját szerkesztésű ranglistagrafika: FinnClass.hu. Adatok: International Finn Association, WR 013, 2026. november.*
 
-**Új éllovasa van a Finn osztály világranglistájának: a francia Valérian Lebrun először került az első helyre. A 2026. novemberi világranglista (WR 013) 39 nemzet 1311 versenyzőjét rangsorolja. Kaiser Kristóf a 13., Pallay Tibor a 14. helyen áll; a frissítésbe Kaiser két és Németh Domonkos egy versenygyőzelme is bekerült.**
+**Új éllovasa van a Finn osztály világranglistájának: a francia Valérian Lebrun először került az első helyre. A 2026. novemberi világranglista (WR 013) 39 nemzet 1311 versenyzőjét rangsorolja. Három magyar szerepel az első húszban: Kaiser Kristóf a 13., Pallay Tibor a 14., Lukáts Ákos a 18. helyen áll; a frissítésbe Kaiser két és Németh Domonkos egy versenygyőzelme is bekerült.**
 
 ## Megérkezett a régóta várt első hely
 
@@ -40,9 +40,9 @@ A 2026-os Finn Grand Slam győztese, Bas de Waal továbbra is ötödik. Előtte 
 | 9. | Marko Kolic | ITA | 1030,5 |
 | 10. | Rob McMillan | AUS | 1007,0 |
 
-## Magyar helyezések és három versenygyőzelem
+## Három magyar az első húszban és három versenygyőzelem
 
-Az IFA táblázatában **Kaiser Kristóf 929,6 ponttal a 13., Pallay Tibor 928,2 ponttal a 14.** Mindkettejüknél öt eredmény számít bele a pontszámba; Kaiser összesen kilenc, Pallay tizenegy versennyel szerepel a listán. Ezek világranglista-helyezések, nem az egyes regatták eredményei.
+Az IFA táblázatában **Kaiser Kristóf 929,6 ponttal a 13., Pallay Tibor 928,2 ponttal a 14., Lukáts Ákos 881,7 ponttal a 18.** Mindhármuknál öt eredmény számít bele a pontszámba; Kaiser összesen kilenc, Pallay tizenegy, Lukáts tizennégy versennyel szerepel a listán. Ezek világranglista-helyezések, nem az egyes regatták eredményei.
 
 A júliusi ranglistafrissítés óta hozzáadott események között három magyar győzelmet emel ki a közlemény:
 
