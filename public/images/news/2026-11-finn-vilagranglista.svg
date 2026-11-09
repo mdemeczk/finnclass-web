@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">Finn-világranglista — 2026. november</title>
+<desc id="desc">Első Valérian Lebrun 1229,9 ponttal, második Peter Peet 1210,1 ponttal, harmadik Laurent Hay 1186,6 ponttal. Saját FinnClass.hu grafika az IFA WR 013 adataiból.</desc>
+<rect width="1200" height="675" fill="#082d46"/>
+<path d="M0 560 Q150 520 300 560 T600 560 T900 560 T1200 560 V675 H0Z" fill="#10445f"/>
+<path d="M0 610 Q150 570 300 610 T600 610 T900 610 T1200 610" fill="none" stroke="#28718b" stroke-width="3"/>
+<g font-family="Arial, Helvetica, sans-serif">
+<text x="70" y="80" fill="#72d4de" font-size="23" letter-spacing="4">FINNCLASS.HU · WR 013</text>
+<text x="70" y="145" fill="white" font-size="48" font-weight="700">Finn-világranglista</text>
+<text x="70" y="187" fill="#c1d4df" font-size="25">2026. november</text>
+<rect x="70" y="235" width="1060" height="115" rx="12" fill="#f4c65c"/>
+<text x="100" y="310" fill="#082d46" font-size="56" font-weight="700">1</text>
+<text x="175" y="290" fill="#082d46" font-size="37" font-weight="700">Valérian Lebrun</text>
+<text x="177" y="324" fill="#284754" font-size="22">FRA · először világelső</text>
+<text x="1085" y="306" text-anchor="end" fill="#082d46" font-size="37" font-weight="700">1229,9</text>
+<g fill="white" font-size="30">
+<text x="100" y="411">2</text><text x="175" y="411">Peter Peet</text><text x="760" y="411" fill="#a8c8d8" font-size="23">NED</text><text x="1085" y="411" text-anchor="end">1210,1</text>
+<text x="100" y="479">3</text><text x="175" y="479">Laurent Hay</text><text x="760" y="479" fill="#a8c8d8" font-size="23">FRA</text><text x="1085" y="479" text-anchor="end">1186,6</text>
+</g>
+<text x="70" y="574" fill="white" font-size="25">1311 versenyző · 39 nemzet · 113 verseny</text>
+<text x="70" y="635" fill="#c1d4df" font-size="19">Adatok: International Finn Association · Grafika: FinnClass.hu</text>
+</g></svg>
