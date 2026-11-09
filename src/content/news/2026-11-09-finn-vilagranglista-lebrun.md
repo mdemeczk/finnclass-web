@@ -11,13 +11,13 @@ draft: false
 
 *Saját szerkesztésű ranglistagrafika: FinnClass.hu. Adatok: International Finn Association, WR 013, 2026. november.*
 
-**Új éllovasa van a Finn osztály világranglistájának: a francia Valérian Lebrun először került az első helyre. A 2026. novemberi, 13. kiadás 39 nemzet 1311 versenyzőjét rangsorolja. Kaiser Kristóf a 13., Pallay Tibor a 14. helyen áll; a frissítésbe Kaiser két és Németh Domonkos egy versenygyőzelme is bekerült.**
+**Új éllovasa van a Finn osztály világranglistájának: a francia Valérian Lebrun először került az első helyre. A 2026. novemberi világranglista (WR 013) 39 nemzet 1311 versenyzőjét rangsorolja. Kaiser Kristóf a 13., Pallay Tibor a 14. helyen áll; a frissítésbe Kaiser két és Németh Domonkos egy versenygyőzelme is bekerült.**
 
 ## Megérkezett a régóta várt első hely
 
 Lebrun két helyet javítva vette át a vezetést. Peter Peet a második, Laurent Hay a harmadik helyre került. Az IFA közleménye szerint a 2025-ös nyílt Európa-bajnok több jelentős versenyen is dobogóra állt az elmúlt években, a ranglista élére azonban most jutott fel először.
 
-A 2022-ben bevezetett világranglistának eddig négy különböző éllovasa volt. Az utóbbi négy kiadásban Laurent Hay, Alessandro Marega, Peter Peet, majd Valérian Lebrun állt az élen. Most is ők foglalják el az első négy helyet.
+A 2022-ben bevezetett világranglistának eddig négy különböző éllovasa volt. A legutóbbi négy ranglistafrissítés során Laurent Hay, Alessandro Marega, Peter Peet, majd Valérian Lebrun állt az élen. Most is ők foglalják el az első négy helyet.
 
 ## Előrelépések az élmezőnyben
 
@@ -44,7 +44,7 @@ A 2026-os Finn Grand Slam győztese, Bas de Waal továbbra is ötödik. Előtte 
 
 Az IFA táblázatában **Kaiser Kristóf 929,6 ponttal a 13., Pallay Tibor 928,2 ponttal a 14.** Mindkettejüknél öt eredmény számít bele a pontszámba; Kaiser összesen kilenc, Pallay tizenegy versennyel szerepel a listán. Ezek világranglista-helyezések, nem az egyes regatták eredményei.
 
-A júliusi kiadás óta hozzáadott események között három magyar győzelmet emel ki a közlemény:
+A júliusi ranglistafrissítés óta hozzáadott események között három magyar győzelmet emel ki a közlemény:
 
 - **Kaiser Kristóf** nyerte a tihanyi **THE Olympic Regatta 2026** versenyt.
 - A balatonföldvári **Finn országos bajnokságon** szintén **Kaiser Kristóf** győzött.
@@ -52,9 +52,9 @@ A júliusi kiadás óta hozzáadott események között három magyar győzelmet
 
 Két magyar versenyző összesen három versenygyőzelméről van tehát szó. A többi magyar induló aktuális helyezése az alább hivatkozott teljes ranglistán kereshető meg.
 
-## A novemberi kiadás számokban
+## A novemberi világranglista számokban
 
-A WR 013 **113 verseny** eredményeit tartalmazza, amelyeket **28 országban** rendeztek. A **39 nemzetből érkező 1311 versenyzőt** felsoroló kiadásba **25 új esemény** került be a 2026. júliusi WR 012-höz képest, köztük a 2026-os Grand Slam utolsó öt versenye.
+A WR 013 **113 verseny** eredményeit tartalmazza, amelyeket **28 országban** rendeztek. A **39 nemzetből érkező 1311 versenyzőt** felsoroló ranglistába **25 új esemény** került be a 2026. júliusi WR 012-höz képest, köztük a 2026-os Grand Slam utolsó öt versenye.
 
 A lista a nagy nemzetközi bajnokságok mellett nemzeti bajnokságokat és más regattákat is összekapcsol, így széles körben követhetővé teszi az aktív finnesek eredményeit.
 
