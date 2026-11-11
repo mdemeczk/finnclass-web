@@ -2,6 +2,7 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero.astro';
+import InternationalFinn from '../components/InternationalFinn.astro';
 import News from '../components/News.astro';
 import UpcomingRace from '../components/UpcomingRace.astro';
 import Results from '../components/Results.astro';
@@ -19,6 +20,7 @@ const sponsors = (await getCollection('sponsors')).sort((a, b) => a.data.order -
   <Navbar />
   <main>
     <Hero />
+    <InternationalFinn />
     <News news={news} />
     <UpcomingRace races={races} />
     <Results />

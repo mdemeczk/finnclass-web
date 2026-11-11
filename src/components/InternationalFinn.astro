@@ -1,0 +1,44 @@
+---
+const baseUrl = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
+---
+
+<section class="py-4 international-finn" aria-labelledby="international-finn-title">
+  <div class="container">
+    <div class="d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-4">
+      <div class="d-flex align-items-start gap-3">
+        <div class="international-finn-icon" aria-hidden="true"><i class="fa-solid fa-globe"></i></div>
+        <div>
+          <p class="eyebrow text-primary mb-1">Nemzetközi Finn osztályszövetség</p>
+          <h2 class="h3 mb-2" id="international-finn-title">Megújult a finnclass.org</h2>
+          <p class="mb-0 text-secondary">Versenynaptár, világranglista, kiemelt események és a Finn osztály története egy modern, új felületen.</p>
+        </div>
+      </div>
+      <div class="d-flex flex-wrap gap-2 flex-shrink-0">
+        <a class="btn btn-primary" href="http://finnclass.org/" target="_blank" rel="noopener noreferrer">
+          Nemzetközi oldal <i class="fa-solid fa-arrow-up-right-from-square ms-2" aria-hidden="true"></i>
+        </a>
+        <a class="btn btn-outline-primary" href={`${baseUrl}hirek/2026-11-11-megujult-finnclass-org/`}>
+          Ajánló elolvasása
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .international-finn {
+    background: linear-gradient(90deg, rgba(15, 78, 102, 0.08), rgba(0, 166, 81, 0.08));
+    border-bottom: 1px solid rgba(15, 78, 102, 0.14);
+  }
+  .international-finn-icon {
+    display: grid;
+    place-items: center;
+    width: 3rem;
+    height: 3rem;
+    flex: 0 0 3rem;
+    border-radius: 50%;
+    background: var(--bs-primary);
+    color: #fff;
+    font-size: 1.2rem;
+  }
+</style>
