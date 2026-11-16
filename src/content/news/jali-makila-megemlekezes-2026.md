@@ -8,6 +8,7 @@ draft: true
 ---
 
 <!-- SZERKESZTŐI VÁZLAT – NEM PUBLIKÁLHATÓ A KÉPEK FELHASZNÁLÁSI JOGÁNAK TISZTÁZÁSA ELŐTT.
+A három alábbi IFA-archív fénykép szerkesztői előnézethez beillesztve. Képfelhasználási engedély és a fotós azonosítása szükséges publikálás előtt.
 Fotójelöltek az IFA nekrológjában:
 https://archive.finnclass.org/news/1836-rip-jali-maekilae-1965-2026
 Közvetlen fájlok (ellenőrizendő képaláírás, fotós és licenc):
@@ -17,6 +18,10 @@ https://archive.finnclass.org/images/2026/jali.jpg
 KIZÁRVA: https://archive.finnclass.org/images/2026/jali5%20copy.jpg – a felhasználó azonosítása szerint a képen Tomáš Mihálik szlovák finnes látható, nem Jali Mäkilä. NE HASZNÁLJUK.
 A draft külön GitHub-ágon tárolandó; main ágra ne kerüljön publikálási döntés előtt.
 -->
+
+![Jali Mäkilä – archív portré az IFA megemlékezéséből](https://archive.finnclass.org/images/2026/jali4.jpg)
+
+*Jali Mäkilä. Fotó: IFA-archívum; az eredeti fotós és a közlési engedély ellenőrzendő.*
 
 A nemzetközi Finn osztály közössége Jali Mäkilät gyászolja. A finn vitorlázó három olimpián képviselte hazáját, kétszer Finn dinghyben, majd egyszer Solingban állt rajthoz. A nemzetközi élmezőnyben elért eredményei mellett versenyzőtársai önálló gondolkodású, kitartó és emlékezetes sportemberként idézik fel.
 
@@ -28,11 +33,19 @@ Mäkilä hosszú éveken át a Finn dinghy nemzetközi élvonalába tartozott. A
 
 Kétszer is győzött a nagy presztízsű, hyères-i Semaine Olympique Française regattán: 1990-ben és 1991-ben. Hazájában négy egymást követő alkalommal, 1990-től 1993-ig lett Finn-bajnok.
 
+![Jali Mäkilä Finn dinghyben – archív felvétel](https://archive.finnclass.org/images/2026/Jali1%20copy.jpg)
+
+*Jali Mäkilä Finn dinghyben. Forrás: IFA-archívum; a fotó szerzője és felhasználási engedélye ellenőrzendő.*
+
 ## Három olimpiai szereplés
 
 Az 1992-es barcelonai olimpián Finn dinghyben a 17. helyen zárt, négy évvel később, Atlantában pedig már a 11. helyet szerezte meg.
 
 Ezt követően a háromszemélyes Soling osztályban folytatta olimpiai pályafutását. A 2000-es sydney-i játékokon Erkki „Eki” Heinonennel és Sami Tamminennel alkotott csapatot; a finn egység a 16. helyen végzett.
+
+![Jali Mäkilä Finn dinghyvel verseny közben – archív fotó](https://archive.finnclass.org/images/2026/jali.jpg)
+
+*Verseny közben. Forrás: IFA-archívum; a fotó szerzője és felhasználási engedélye ellenőrzendő.*
 
 ## Más hajóosztályokban is bajnok
 
