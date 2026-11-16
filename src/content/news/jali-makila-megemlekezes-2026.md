@@ -14,7 +14,7 @@ Közvetlen fájlok (ellenőrizendő képaláírás, fotós és licenc):
 https://archive.finnclass.org/images/2026/jali4.jpg
 https://archive.finnclass.org/images/2026/Jali1%20copy.jpg
 https://archive.finnclass.org/images/2026/jali.jpg
-https://archive.finnclass.org/images/2026/jali5%20copy.jpg
+KIZÁRVA: https://archive.finnclass.org/images/2026/jali5%20copy.jpg – a felhasználó azonosítása szerint a képen Tomáš Mihálik szlovák finnes látható, nem Jali Mäkilä. NE HASZNÁLJUK.
 A draft külön GitHub-ágon tárolandó; main ágra ne kerüljön publikálási döntés előtt.
 -->
 
