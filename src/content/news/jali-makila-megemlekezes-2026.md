@@ -18,7 +18,7 @@ https://archive.finnclass.org/images/2026/jali5%20copy.jpg
 A draft külön GitHub-ágon tárolandó; main ágra ne kerüljön publikálási döntés előtt.
 -->
 
-A nemzetközi Finn osztály közössége Jali Mäkilät gyászolja. A finn vitorlázó három olimpián képviselte hazáját; kétszer Finn dinghyben, majd egyszer Solingban állt rajthoz. A nemzetközi élmezőnyben elért eredményei mellett versenyzőtársai önálló gondolkodású, kitartó és emlékezetes sportemberként idézik fel.
+A nemzetközi Finn osztály közössége Jali Mäkilät gyászolja. A finn vitorlázó három olimpián képviselte hazáját, kétszer Finn dinghyben, majd egyszer Solingban állt rajthoz. A nemzetközi élmezőnyben elért eredményei mellett versenyzőtársai önálló gondolkodású, kitartó és emlékezetes sportemberként idézik fel.
 
 Jali Alarik Mäkilä 1965. április 22-én született a finnországi Turkuban. A Turun Pursiseura egyesület versenyzőjeként vált ismertté a nemzetközi vitorlázásban.
 
